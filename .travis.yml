@@ -3,3 +3,11 @@ node_js:
   - "iojs"
   - "7"
 cache: yarn
+addons:
+  sonarcloud:
+    organization: "ankitprahladsoni-github" # the key of the org you chose at step #3
+    token:
+      secure: $SONAR_TOKEN # encrypted value of your token
+script:
+- yarn test
+- sonar-scanner
