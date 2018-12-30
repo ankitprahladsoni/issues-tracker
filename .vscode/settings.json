@@ -11,5 +11,7 @@
         "**/package-lock.json": true,
         "**/rn-cli.config.js": true,
         "**/yarn.lock": true
-    }
+    },
+    "prettier.singleQuote": true,
+    "prettier.trailingComma": "es5"
 }
