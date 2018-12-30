@@ -8,5 +8,5 @@ addons:
     token:
       secure: $SONAR_TOKEN # encrypted value of your token
 script:
-- yarn test
+- node ./node_modules/jest/bin/jest.js
 - sonar-scanner
