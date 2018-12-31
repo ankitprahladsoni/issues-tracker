@@ -5,7 +5,7 @@ export class Hello extends React.Component {
   render() {
     return (
       <View>
-        <Text>Repository Page</Text>
+        <Text>Repository Page </Text>
       </View>
     );
   }
