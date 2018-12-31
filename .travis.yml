@@ -10,3 +10,7 @@ addons:
 script:
 - node ./node_modules/jest/bin/jest.js --coverage
 - sonar-scanner
+notifications:
+  email: false
+after_success:
+  - codecov
