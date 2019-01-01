@@ -3,7 +3,7 @@ import { Text, View } from 'react-native';
 
 import { createMaterialTopTabNavigator } from 'react-navigation';
 
-class HomeScreen extends React.Component {
+class MilestoneScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -13,7 +13,7 @@ class HomeScreen extends React.Component {
   }
 }
 
-class SettingsScreen extends React.Component {
+class StoriesScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -23,12 +23,26 @@ class SettingsScreen extends React.Component {
   }
 }
 
+class BugsScreen extends React.Component {
+  render() {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Bugs!</Text>
+      </View>
+    );
+  }
+}
+
 const TabNavigator = createMaterialTopTabNavigator({
-  Home: HomeScreen,
-  Settings: SettingsScreen,
+  Milestone: MilestoneScreen,
+  Stories: StoriesScreen,
+  Bugs: BugsScreen,
 });
 
 export default class RepositoryScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Repository!!!',
+  };
   render() {
     return <TabNavigator />;
   }
