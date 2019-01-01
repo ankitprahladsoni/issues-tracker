@@ -8,5 +8,10 @@ addons:
     token:
       secure: $SONAR_TOKEN # encrypted value of your token
 script:
+- npm install codecov -g
 - node ./node_modules/jest/bin/jest.js --coverage
 - sonar-scanner
+notifications:
+  email: false
+after_success:
+  - codecov
