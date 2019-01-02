@@ -12,6 +12,11 @@
   },
   "jest": {
     "preset": "jest-expo",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
     "transform": {
       "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
       "^.+\\.tsx?$": "ts-jest"
@@ -20,18 +25,14 @@
       "**/__tests__/**/*.ts?(x)",
       "**/?(*.)+(spec|test).ts?(x)"
     ],
-    "moduleFileExtensions": [
-      "js",
-      "ts",
-      "tsx"
-    ],
     "globals": {
       "ts-jest": {
         "tsConfig": {
           "jsx": "react"
         }
       }
-    }
+    },
+    "cacheDirectory": ".jest/cache"
   },
   "dependencies": {
     "@expo/samples": "2.1.1",
