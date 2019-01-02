@@ -13,5 +13,6 @@
         "**/yarn.lock": true
     },
     "prettier.singleQuote": true,
-    "prettier.trailingComma": "es5"
+    "prettier.trailingComma": "es5",
+    "typescript.suggest.completeFunctionCalls": true
 }
