@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
-import RepositoryScreen from '../screens/RespositoryScreen';
+import RepositoryScreen from '../screens/RepositoryScreen';
 
 class DetailsScreen extends React.Component {
   render() {

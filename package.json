@@ -5,45 +5,63 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "eject": "expo eject",
-    "test": "node ./node_modules/jest/bin/jest.js --watchAll"
+    "test": "node ./node_modules/jest/bin/jest.js --watchAll",
+    "tslint": "tslint --project .",
+    "tsc-test": "tsc --project . --noEmit",
+    "jest": "node ./node_modules/jest/bin/jest.js"
   },
   "jest": {
-    "preset": "react-native",
+    "preset": "jest-expo",
     "moduleFileExtensions": [
       "ts",
       "tsx",
       "js"
     ],
     "transform": {
-      "^.+\\.(js)$": "<rootDir>/node_modules/babel-jest",
-      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+      "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
+      "^.+\\.tsx?$": "ts-jest"
     },
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
-    "testPathIgnorePatterns": [
-      "\\.snap$",
-      "<rootDir>/node_modules/"
+    "testMatch": [
+      "**/__tests__/**/*.ts?(x)",
+      "**/?(*.)+(spec|test).ts?(x)"
     ],
+    "globals": {
+      "ts-jest": {
+        "tsConfig": {
+          "jsx": "react"
+        }
+      }
+    },
+    "setupTestFrameworkScriptFile": "<rootDir>__tests__/SetupTests.js",
     "cacheDirectory": ".jest/cache"
   },
   "dependencies": {
-    "@expo/samples": "2.1.1",
-    "@types/expo": "^31.0.5",
-    "@types/react-navigation": "^3.0.1",
     "expo": "^31.0.2",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
     "react-navigation": "^2.18.2"
   },
   "devDependencies": {
-    "@types/jest": "^23.3.10",
+    "@expo/samples": "^2.1.1",
+    "@types/enzyme": "^3.1.15",
+    "@types/enzyme-adapter-react-16": "^1.0.3",
+    "@types/expo": "^31.0.6",
+    "@types/jest": "^23.3.11",
     "@types/react": "^16.7.18",
     "@types/react-native": "^0.57.23",
+    "@types/react-navigation": "^3.0.1",
     "@types/react-test-renderer": "^16.0.3",
-    "babel-preset-expo": "^5.0.0",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "jest": "^23.6.0",
     "jest-expo": "^31.0.0",
     "react-addons-test-utils": "^15.6.2",
+    "react-dom": "^16.7.0",
     "react-native-typescript-transformer": "^1.2.11",
+    "react-test-renderer": "^16.7.0",
     "ts-jest": "^23.10.5",
+    "tslint": "^5.12.0",
+    "tslint-config-airbnb": "^5.11.1",
     "typescript": "^3.2.2"
   },
   "private": true
