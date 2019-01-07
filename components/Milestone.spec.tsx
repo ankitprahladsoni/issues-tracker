@@ -1,7 +1,23 @@
 import React from 'react';
+import Milestone from './Milestone';
+import { shallow } from 'enzyme';
+import TaskModal from './TaskModal';
+import { valueFromWrapper } from 'testUtils/ElementUtils';
 
-it('should display the name of milestone', () => {});
-it('should display "No Tasks" if there are no tasks in it', () => {});
+it('should display the name of milestone', () => {
+  const milestoneName = 'First milestone';
+  const wrapper = shallow(<Milestone name={milestoneName} tasks={[]} />);
+
+  expect(valueFromWrapper(wrapper, 'milestone-name')).toEqual(milestoneName);
+});
+
+it('should display "No Tasks" if there are no tasks in it', () => {
+  const tasks: TaskModal[] = [];
+  const wrapper = shallow(<Milestone name="firstMilestone" tasks={tasks} />);
+
+  expect(valueFromWrapper(wrapper, 'task-count')).toEqual('No Tasks');
+});
+
 it('should show task counter', () => {});
 it("should display it's tasks when clicked on it", () => {});
 
