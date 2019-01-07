@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import TaskModal from './TaskModal';
 
 export interface MilestoneProps {
-  name: String;
+  name: string;
   tasks: TaskModal[];
 }
 
