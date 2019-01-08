@@ -1,10 +1,12 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import TaskModal from './TaskModal';
+import TaskCounter from './TaskCounter';
 
 export interface MilestoneProps {
   name: string;
   tasks: TaskModal[];
+  dueDate: string;
 }
 
 export interface MilestoneState {}
@@ -23,7 +25,8 @@ export default class Milestone extends React.Component<
     return (
       <View>
         <Text testID="milestone-name">{this.props.name}</Text>
-        <Text testID="task-count">No Tasks</Text>
+        <Text testID="date">{this.props.dueDate}</Text>
+        <TaskCounter />
       </View>
     );
   }
