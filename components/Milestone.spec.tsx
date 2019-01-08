@@ -3,6 +3,7 @@ import Milestone from './Milestone';
 import { shallow } from 'enzyme';
 import { valueFromWrapper } from 'testUtils/ElementUtils';
 import TaskCounter from './TaskCounter';
+import ProgressIndicator from './ProgressIndicator';
 
 it('should display the name of milestone', () => {
   const milestoneName = 'First milestone';
@@ -19,6 +20,13 @@ it('should have a TaskCounter component', () => {
   expect(wrapper.find(TaskCounter).length).toBe(1);
 });
 
+it('should have a ProgressIndicator component', () => {
+  const wrapper = shallow(
+    <Milestone name="firstMilestone" tasks={[]} dueDate="01/01/2020" />
+  );
+  expect(wrapper.find(ProgressIndicator).length).toBe(1);
+});
+
 it("should display it's tasks when clicked on it", () => {});
 
 describe('Open milestone', () => {
@@ -28,14 +36,8 @@ describe('Open milestone', () => {
     );
     expect(valueFromWrapper(wrapper, 'date')).toBe('01/01/2020');
   });
-
-  it('should have Grey band if there are no tasks in it', () => {});
-  it('should have Red band if <30% tasks are completed', () => {});
-  it('should have Yellow band if 30%-70% tasks are completed', () => {});
-  it('should have Green band if > 70% tasks are completed', () => {});
 });
 
 describe('Closed milestone', () => {
-  it('should not display any color band', () => {});
   it('should show completed date', () => {});
 });
