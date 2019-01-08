@@ -5,39 +5,47 @@ import { valueFromWrapper } from 'testUtils/ElementUtils';
 import TaskCounter from './TaskCounter';
 import ProgressIndicator from './ProgressIndicator';
 
-it('should display the name of milestone', () => {
+describe('Milestone', () => {
   const milestoneName = 'First milestone';
   const wrapper = shallow(
-    <Milestone name={milestoneName} tasks={[]} dueDate="01/01/2020" />
+    <Milestone
+      name={milestoneName}
+      tasks={[]}
+      dueDate="01/01/2020"
+      closed={false}
+    />
   );
-  expect(valueFromWrapper(wrapper, 'milestone-name')).toEqual(milestoneName);
-});
 
-it('should have a TaskCounter component', () => {
-  const wrapper = shallow(
-    <Milestone name="firstMilestone" tasks={[]} dueDate="01/01/2020" />
-  );
-  expect(wrapper.find(TaskCounter).length).toBe(1);
-});
-
-it('should have a ProgressIndicator component', () => {
-  const wrapper = shallow(
-    <Milestone name="firstMilestone" tasks={[]} dueDate="01/01/2020" />
-  );
-  expect(wrapper.find(ProgressIndicator).length).toBe(1);
-});
-
-it("should display it's tasks when clicked on it", () => {});
-
-describe('Open milestone', () => {
-  it('should show expected end time of the milestone', () => {
-    const wrapper = shallow(
-      <Milestone name="firstMilestone" tasks={[]} dueDate="01/01/2020" />
-    );
-    expect(valueFromWrapper(wrapper, 'date')).toBe('01/01/2020');
+  it('should display the name of milestone', () => {
+    expect(valueFromWrapper(wrapper, 'milestone-name')).toEqual(milestoneName);
   });
+
+  it('should have a TaskCounter component', () => {
+    expect(wrapper.find(TaskCounter).length).toBe(1);
+  });
+
+  it('should have a ProgressIndicator component', () => {
+    expect(wrapper.find(ProgressIndicator).length).toBe(1);
+  });
+
+  it('should show expected end time of the milestone', () => {
+    expect(valueFromWrapper(wrapper, 'date')).toBe('Due by 01/01/2020');
+  });
+
+  it("should display it's tasks when clicked on it", () => {});
 });
 
 describe('Closed milestone', () => {
-  it('should show completed date', () => {});
+  const wrapper = shallow(
+    <Milestone
+      name="First Milestone"
+      tasks={[]}
+      dueDate="01/01/2020"
+      closedDate="02/01/2020"
+      closed={true}
+    />
+  );
+  it('should show completed date', () => {
+    expect(valueFromWrapper(wrapper, 'date')).toBe('Closed on 02/01/2020')
+  });
 });
