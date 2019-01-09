@@ -38,7 +38,7 @@ export default class Milestone extends React.Component<
         <Text testID="milestone-name">{this.props.name}</Text>
         <Text testID="date">{date}</Text>
         <TaskCounter />
-        <ProgressIndicator />
+        <ProgressIndicator percentage={100}/>
       </TouchableOpacity>
     );
   }
