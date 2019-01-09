@@ -1,5 +1,6 @@
 {
     "files.exclude": {
+        "**/__snapshots__": true,
         "**/.expo": true,
         "**/.jest": true,
         "**/.vscode": true,
@@ -14,5 +15,6 @@
     },
     "prettier.singleQuote": true,
     "prettier.trailingComma": "es5",
-    "typescript.suggest.completeFunctionCalls": true
+    "typescript.suggest.completeFunctionCalls": true,
+    "editor.snippetSuggestions": "top"
 }
