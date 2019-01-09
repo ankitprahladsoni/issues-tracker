@@ -5,16 +5,21 @@ import { valueFromWrapper } from 'testUtils/ElementUtils';
 import TaskCounter from './TaskCounter';
 import ProgressIndicator from './ProgressIndicator';
 
+const navigateFn = jest.fn();
+const createTestProps = (props: Object) => ({
+  navigation: {
+    navigate: navigateFn,
+  },
+  tasks: [],
+  dueDate: '01/01/2020',
+  closed: false,
+  ...props,
+});
+
 describe('Milestone', () => {
   const milestoneName = 'First milestone';
-  const wrapper = shallow(
-    <Milestone
-      name={milestoneName}
-      tasks={[]}
-      dueDate="01/01/2020"
-      closed={false}
-    />
-  );
+  const props: any = createTestProps({ name: milestoneName });
+  const wrapper = shallow(<Milestone {...props} />);
 
   it('should display the name of milestone', () => {
     expect(valueFromWrapper(wrapper, 'milestone-name')).toEqual(milestoneName);
@@ -32,20 +37,20 @@ describe('Milestone', () => {
     expect(valueFromWrapper(wrapper, 'date')).toBe('Due by 01/01/2020');
   });
 
-  it("should display it's tasks when clicked on it", () => {});
+  it("should display it's tasks when clicked on it", () => {
+    wrapper.props().onPress();
+    expect(navigateFn).toHaveBeenCalledWith('Task', { name: 'Task 1' });
+  });
 });
 
 describe('Closed milestone', () => {
-  const wrapper = shallow(
-    <Milestone
-      name="First Milestone"
-      tasks={[]}
-      dueDate="01/01/2020"
-      closedDate="02/01/2020"
-      closed={true}
-    />
-  );
+  const props: any = createTestProps({
+    closed: true,
+    closedDate: '02/01/2020',
+  });
+  const wrapper = shallow(<Milestone {...props} />);
+
   it('should show completed date', () => {
-    expect(valueFromWrapper(wrapper, 'date')).toBe('Closed on 02/01/2020')
+    expect(valueFromWrapper(wrapper, 'date')).toBe('Closed on 02/01/2020');
   });
 });
