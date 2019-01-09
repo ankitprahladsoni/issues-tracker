@@ -37,7 +37,7 @@ export default class Milestone extends React.Component<
       <TouchableOpacity onPress={navigateTo}>
         <Text testID="milestone-name">{this.props.name}</Text>
         <Text testID="date">{date}</Text>
-        <TaskCounter />
+        <TaskCounter tasks={this.props.tasks}/>
         <ProgressIndicator percentage={100}/>
       </TouchableOpacity>
     );
