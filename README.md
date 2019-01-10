@@ -1,5 +1,5 @@
 # Issue Tracer
-### An app to view and manage your Github repositories' issues and bugs.
+### Create and mange your projects by creating tasks, milestones, features and bugs.
 
 [![Build Status](https://travis-ci.com/ankitprahladsoni/issues-tracker.svg?branch=master)](https://travis-ci.com/ankitprahladsoni/issues-tracker)
 [![codecov](https://codecov.io/gh/ankitprahladsoni/issues-tracker/branch/master/graph/badge.svg)](https://codecov.io/gh/ankitprahladsoni/issues-tracker)
