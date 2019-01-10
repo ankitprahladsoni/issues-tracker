@@ -14,8 +14,8 @@ class DetailsScreen extends React.Component {
 }
 export default createStackNavigator(
   {
-    Home: RepositoryScreen,
     Details: DetailsScreen,
+    Home: RepositoryScreen,
   },
   {
     initialRouteName: 'Home',

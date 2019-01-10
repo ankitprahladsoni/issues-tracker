@@ -1,21 +1,14 @@
-import { takeSnapshotAsync } from 'expo';
 import React from 'react';
 import { Text, View } from 'react-native';
 import TaskModal from './TaskModal';
 
-export interface TaskCounterProps {
+export interface ITaskCounterProps {
   tasks: TaskModal[];
 }
 
-export interface TaskCounterState {}
-
-export default class TaskCounter extends React.Component<
-  TaskCounterProps,
-  TaskCounterState
-> {
-  constructor(props: TaskCounterProps) {
+export default class TaskCounter extends React.Component<ITaskCounterProps> {
+  constructor(props: ITaskCounterProps) {
     super(props);
-
     this.state = {};
   }
 
@@ -23,11 +16,10 @@ export default class TaskCounter extends React.Component<
     const counterText = (tasks: TaskModal[]) => {
       if (tasks.length === 0) {
         return 'No Tasks';
-      } else {
-        const closedTasks = tasks.filter(t => t.closed).length;
-        const allTasks = tasks.length;
-        return `${closedTasks}/${allTasks}`;
       }
+      const closedTasks = tasks.filter(t => t.closed).length;
+      const allTasks = tasks.length;
+      return `${closedTasks}/${allTasks}`;
     };
     return (
       <View>

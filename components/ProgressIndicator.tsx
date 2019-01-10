@@ -1,19 +1,15 @@
 import * as React from 'react';
 import { View } from 'react-native';
 
-export interface ProgressIndicatorProps {
+export interface IProgressIndicatorProps {
   percentage?: number;
 }
 
-export interface ProgressIndicatorState {}
-
 export default class ProgressIndicator extends React.Component<
-  ProgressIndicatorProps,
-  ProgressIndicatorState
+  IProgressIndicatorProps
 > {
-  constructor(props: ProgressIndicatorProps) {
+  constructor(props: IProgressIndicatorProps) {
     super(props);
-
     this.state = {};
   }
 
@@ -21,20 +17,21 @@ export default class ProgressIndicator extends React.Component<
     const getColor = (percentage: number | undefined) => {
       if (!percentage) {
         return 'grey';
-      } else if (percentage < 30) {
-        return 'red';
-      } else if (percentage < 70) {
-        return 'orange';
-      } else {
-        return 'green';
       }
+      if (percentage < 30) {
+        return 'red';
+      }
+      if (percentage < 70) {
+        return 'orange';
+      }
+      return 'green';
     };
     return (
       <View
         style={{
-          width: 5,
-          height: 50,
           backgroundColor: getColor(this.props.percentage),
+          height: 50,
+          width: 5,
         }}
       />
     );
