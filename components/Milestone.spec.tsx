@@ -20,7 +20,7 @@ function createTestProps<T>(props: T) {
 
 describe('Milestone', () => {
   const milestoneName = 'First milestone';
-  const props: any = createTestProps({ name: milestoneName });
+  let props: any = createTestProps({ name: milestoneName });
   const wrapper = shallow(<Milestone {...props} />);
 
   it('should display the name of milestone', () => {
@@ -43,6 +43,28 @@ describe('Milestone', () => {
     wrapper.props().onPress();
     expect(navigateFn).toHaveBeenCalledWith('Task', { name: 'Task 1' });
   });
+
+  describe('with no closed tasks', () => {
+    it('should calculate percentage as 0', () => {
+      props = createTestProps({
+        tasks: [{ closed: false }],
+      });
+
+      const instance = getInstanceForWrapper(props);
+      expect(instance.taskCompletionPercent()).toBe(0);
+    });
+  });
+
+  describe('with 50% closed tasks', () => {
+    it('should calculate percentage as 50', () => {
+      props = createTestProps({
+        tasks: [{ closed: false }, { closed: true }],
+      });
+
+      const instance = getInstanceForWrapper(props);
+      expect(instance.taskCompletionPercent()).toBe(50);
+    });
+  });
 });
 
 describe('Closed milestone', () => {
@@ -56,3 +78,8 @@ describe('Closed milestone', () => {
     expect(valueFromWrapper(wrapper, 'date')).toBe('Closed on 02/01/2020');
   });
 });
+
+function getInstanceForWrapper(props: any) {
+  const wrapper = shallow(<Milestone {...props} />);
+  return wrapper.instance() as Milestone;
+}

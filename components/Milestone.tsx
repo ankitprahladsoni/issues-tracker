@@ -16,24 +16,27 @@ export interface IMilestoneProps extends NavigationScreenProps {
 export default class Milestone extends React.Component<IMilestoneProps> {
   constructor(props: IMilestoneProps) {
     super(props);
-
     this.state = {};
   }
+
+  taskCompletionPercent = () => {
+    const competedTasks = this.props.tasks.filter(t => t.closed).length;
+    return (competedTasks * 100) / this.props.tasks.length;
+  };
+
+  navigateTo = () => this.props.navigation.navigate('Task', { name: 'Task 1' });
 
   render() {
     const date = this.props.closed
       ? `Closed on ${this.props.closedDate}`
       : `Due by ${this.props.dueDate}`;
 
-    const navigateTo = () =>
-      this.props.navigation.navigate('Task', { name: 'Task 1' });
-
     return (
-      <TouchableOpacity onPress={navigateTo}>
+      <TouchableOpacity onPress={this.navigateTo}>
         <Text testID="milestone-name">{this.props.name}</Text>
         <Text testID="date">{date}</Text>
         <TaskCounter tasks={this.props.tasks} />
-        <ProgressIndicator percentage={100} />
+        <ProgressIndicator percentage={this.taskCompletionPercent()} />
       </TouchableOpacity>
     );
   }
