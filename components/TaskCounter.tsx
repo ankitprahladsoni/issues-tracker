@@ -12,18 +12,18 @@ export default class TaskCounter extends React.Component<ITaskCounterProps> {
     this.state = {};
   }
 
+  counterText = (tasks: TaskModal[]) => {
+    if (tasks.length === 0) {
+      return 'No Tasks';
+    }
+    const closedTasks = tasks.filter(t => t.closed).length;
+    return `${closedTasks}/${tasks.length}`;
+  };
+
   render() {
-    const counterText = (tasks: TaskModal[]) => {
-      if (tasks.length === 0) {
-        return 'No Tasks';
-      }
-      const closedTasks = tasks.filter(t => t.closed).length;
-      const allTasks = tasks.length;
-      return `${closedTasks}/${allTasks}`;
-    };
     return (
       <View>
-        <Text testID="counter-text">{counterText(this.props.tasks)}</Text>
+        <Text testID="counter-text">{this.counterText(this.props.tasks)}</Text>
       </View>
     );
   }

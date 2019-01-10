@@ -27,15 +27,14 @@ export default class Milestone extends React.Component<IMilestoneProps> {
   navigateTo = () => this.props.navigation.navigate('Task', { name: 'Task 1' });
 
   render() {
-    const date = this.props.closed
-      ? `Closed on ${this.props.closedDate}`
-      : `Due by ${this.props.dueDate}`;
+    const { name, tasks, dueDate, closedDate, closed } = this.props;
+    const date = closed ? `Closed on ${closedDate}` : `Due by ${dueDate}`;
 
     return (
       <TouchableOpacity onPress={this.navigateTo}>
-        <Text testID="milestone-name">{this.props.name}</Text>
+        <Text testID="milestone-name">{name}</Text>
         <Text testID="date">{date}</Text>
-        <TaskCounter tasks={this.props.tasks} />
+        <TaskCounter tasks={tasks} />
         <ProgressIndicator percentage={this.taskCompletionPercent()} />
       </TouchableOpacity>
     );
