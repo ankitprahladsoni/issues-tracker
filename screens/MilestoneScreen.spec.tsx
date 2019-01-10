@@ -1,7 +1,7 @@
-import React from 'react';
 import { shallow } from 'enzyme';
-import MilestoneScreen from './MilestoneScreen';
+import React from 'react';
 import { Text } from 'react-native';
+import MilestoneScreen from './MilestoneScreen';
 
 it('has a text Bugs!', () => {
   const wrapper = shallow(<MilestoneScreen />);
@@ -10,5 +10,5 @@ it('has a text Bugs!', () => {
     wrapper
       .find(Text)
       .render().text()
-  ).toEqual('MileStones!')
+  ).toEqual('MileStones!');
 });

@@ -1,8 +1,8 @@
 import React from 'react';
 import { createMaterialTopTabNavigator } from 'react-navigation';
+import BugsScreen from './BugsScreen';
 import MilestoneScreen from './MilestoneScreen';
 import StoriesScreen from './StoriesScreen';
-import BugsScreen from './BugsScreen';
 
 const TabNavigator = createMaterialTopTabNavigator({
   Milestone: MilestoneScreen,

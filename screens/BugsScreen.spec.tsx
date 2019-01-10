@@ -1,7 +1,7 @@
-import React from 'react';
 import { shallow } from 'enzyme';
-import BugsScreen from './BugsScreen';
+import React from 'react';
 import { Text } from 'react-native';
+import BugsScreen from './BugsScreen';
 
 it('has a text Bugs!', () => {
   const wrapper = shallow(<BugsScreen />);
@@ -9,6 +9,7 @@ it('has a text Bugs!', () => {
   expect(
     wrapper
       .find(Text)
-      .render().text()
-  ).toEqual('Bugs!')
+      .render()
+      .text()
+  ).toEqual('Bugs!');
 });

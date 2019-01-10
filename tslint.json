@@ -10,6 +10,18 @@
       "allow-pascal-case",
       "allow-leading-underscore"
     ],
-    "import-name": [true, { "react": "React", "reactTestRenderer": "renderer" }]
+    "import-name": [
+      true,
+      { "react": "React", "reactTestRenderer": "renderer" }
+    ],
+    "member-access": [true, "no-public"],
+    "trailing-comma": [
+      true,
+      {
+        "multiline": {
+          "functions": "never"
+        }
+      }
+    ]
   }
 }

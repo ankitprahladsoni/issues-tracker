@@ -17,7 +17,7 @@ export default class ProgressIndicator extends React.Component<
     this.state = {};
   }
 
-  public render() {
+  render() {
     const getColor = (percentage: number | undefined) => {
       if (!percentage) {
         return 'grey';

@@ -1,18 +1,18 @@
-import React from 'react';
-import Milestone from './Milestone';
 import { shallow } from 'enzyme';
+import React from 'react';
 import { valueFromWrapper } from 'testUtils/ElementUtils';
-import TaskCounter from './TaskCounter';
+import Milestone from './Milestone';
 import ProgressIndicator from './ProgressIndicator';
+import TaskCounter from './TaskCounter';
 
 const navigateFn = jest.fn();
 const createTestProps = (props: Object) => ({
+  closed: false,
+  dueDate: '01/01/2020',
   navigation: {
     navigate: navigateFn,
   },
   tasks: [],
-  dueDate: '01/01/2020',
-  closed: false,
   ...props,
 });
 

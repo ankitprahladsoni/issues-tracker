@@ -1,8 +1,8 @@
-import React from 'react';
 import { shallow } from 'enzyme';
-import TaskModal from './TaskModal';
-import TaskCounter from './TaskCounter';
+import React from 'react';
 import { valueFromWrapper } from 'testUtils/ElementUtils';
+import TaskCounter from './TaskCounter';
+import TaskModal from './TaskModal';
 
 it('should display "No Tasks" if there are no tasks in it', () => {
   const wrapper = shallow(<TaskCounter tasks={[]} />);

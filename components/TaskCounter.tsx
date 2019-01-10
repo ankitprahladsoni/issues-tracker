@@ -1,7 +1,7 @@
-import React from 'react';
-import { View, Text } from 'react-native';
-import TaskModal from './TaskModal';
 import { takeSnapshotAsync } from 'expo';
+import React from 'react';
+import { Text, View } from 'react-native';
+import TaskModal from './TaskModal';
 
 export interface TaskCounterProps {
   tasks: TaskModal[];
@@ -19,7 +19,7 @@ export default class TaskCounter extends React.Component<
     this.state = {};
   }
 
-  public render() {
+  render() {
     const counterText = (tasks: TaskModal[]) => {
       if (tasks.length === 0) {
         return 'No Tasks';
