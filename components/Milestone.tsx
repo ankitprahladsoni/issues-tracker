@@ -20,6 +20,9 @@ export default class Milestone extends React.Component<IMilestoneProps> {
   }
 
   taskCompletionPercent = () => {
+    if (this.props.tasks.length === 0) {
+      return -1;
+    }
     const competedTasks = this.props.tasks.filter(t => t.closed).length;
     return (competedTasks * 100) / this.props.tasks.length;
   };

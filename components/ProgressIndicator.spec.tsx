@@ -3,7 +3,7 @@ import React from 'react';
 import ProgressIndicator from './ProgressIndicator';
 
 it('should have Grey band if there are no tasks in it', () => {
-  const wrapper = shallow(<ProgressIndicator />);
+  const wrapper = shallow(<ProgressIndicator percentage={-1} />);
 
   expect(wrapper.prop('style')).toHaveProperty('backgroundColor', 'grey');
 });

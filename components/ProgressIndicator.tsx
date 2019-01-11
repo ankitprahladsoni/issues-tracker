@@ -2,7 +2,7 @@ import * as React from 'react';
 import { View } from 'react-native';
 
 export interface IProgressIndicatorProps {
-  percentage?: number;
+  percentage: number;
 }
 
 export default class ProgressIndicator extends React.Component<
@@ -14,17 +14,15 @@ export default class ProgressIndicator extends React.Component<
   }
 
   render() {
-    const getColor = (percentage: number | undefined) => {
-      if (!percentage) {
-        return 'grey';
-      }
-      if (percentage < 30) {
-        return 'red';
-      }
-      if (percentage < 70) {
-        return 'orange';
-      }
-      return 'green';
+    const getColor = (percentage: number) => {
+      const percColors = [
+        { color: 'grey', perc: -1 },
+        { color: 'red', perc: 30 },
+        { color: 'orange', perc: 70 },
+        { color: 'green', perc: 100 },
+      ];
+
+      return percColors.find(x => percentage <= x.perc)!.color;
     };
     return (
       <View
