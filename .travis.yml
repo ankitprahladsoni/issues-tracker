@@ -11,7 +11,7 @@ addons:
     token:
       secure: $SONAR_TOKEN
 script:
-  - yarn jest --coverage --clearCache
+  - yarn jest --clearCache --coverage 
   - yarn tslint -t json -o report.json --force
   - sonar-scanner
 notifications:
