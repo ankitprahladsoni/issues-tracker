@@ -8,7 +8,6 @@ function createTestProps<T>(props: T) {
     navigation: {
       navigate: navigateFn,
     },
-
     ...props,
   };
 }

@@ -27,6 +27,7 @@
     "@types/react-native": "^0.57.27",
     "@types/react-navigation": "^3.0.1",
     "@types/react-test-renderer": "^16.0.3",
+    "babel-preset-expo": "^5.0.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.7.1",
     "jest": "^23.6.0",
