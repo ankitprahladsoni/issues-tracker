@@ -6,7 +6,8 @@
     "strict": true,
     "baseUrl": "./",
     "paths": {
-      "testUtils/*": ["testUtils/*"]
+      "testUtils/*": ["testUtils/*"],
+      "components/*": ["components/*"]
     },
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true

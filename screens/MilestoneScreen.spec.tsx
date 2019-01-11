@@ -1,14 +1,21 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import { Text } from 'react-native';
 import MilestoneScreen from './MilestoneScreen';
 
-it('has a text Bugs!', () => {
-  const wrapper = shallow(<MilestoneScreen />);
+const navigateFn = jest.fn();
+function createTestProps<T>(props: T) {
+  return {
+    navigation: {
+      navigate: navigateFn,
+    },
 
-  expect(
-    wrapper
-      .find(Text)
-      .render().text()
-  ).toEqual('MileStones!');
+    ...props,
+  };
+}
+
+it("should display it's tasks when clicked on it", () => {
+  let props: any = createTestProps({});
+  const wrapper = shallow(<MilestoneScreen {...props} />);
+  wrapper.props().onPress();
+  expect(navigateFn).toHaveBeenCalledWith('Task', { name: 'Task 1' });
 });

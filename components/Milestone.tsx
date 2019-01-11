@@ -1,11 +1,11 @@
 import React from 'react';
-import { Text, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 import { NavigationScreenProps } from 'react-navigation';
 import ProgressIndicator from './ProgressIndicator';
 import TaskCounter from './TaskCounter';
 import TaskModal from './TaskModal';
 
-export interface IMilestoneProps extends NavigationScreenProps {
+export interface IMilestoneProps {
   name: string;
   tasks: TaskModal[];
   dueDate: string;
@@ -28,19 +28,17 @@ export default class Milestone extends React.Component<IMilestoneProps> {
     return (completedTasksLength * 100) / tasks.length;
   };
 
-  navigateTo = () => this.props.navigation.navigate('Task', { name: 'Task 1' });
-
   render() {
     const { name, tasks, dueDate, closedDate, closed } = this.props;
     const dateText = closed ? `Closed on ${closedDate}` : `Due by ${dueDate}`;
 
     return (
-      <TouchableOpacity onPress={this.navigateTo}>
+      <View>
         <Text testID="milestone-name">{name}</Text>
         <Text testID="date">{dateText}</Text>
         <TaskCounter tasks={tasks} />
         <ProgressIndicator percentage={this.taskCompletionPercent()} />
-      </TouchableOpacity>
+      </View>
     );
   }
 }

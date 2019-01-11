@@ -1,11 +1,23 @@
 import React from 'react';
-import { Text, View } from 'react-native';
-export default class MilestoneScreen extends React.Component {
+import { Text, View, TouchableOpacity } from 'react-native';
+import Milestone from 'components/Milestone';
+import { NavigationScreenProps } from 'react-navigation';
+
+export default class MilestoneScreen extends React.Component<
+  NavigationScreenProps
+> {
+  navigateTo = () => this.props.navigation.navigate('Task', { name: 'Task 1' });
+
   render() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>MileStones!</Text>
-      </View>
+      <TouchableOpacity onPress={this.navigateTo}>
+        <Milestone
+          name="test"
+          dueDate="01/01/2020"
+          tasks={[{ closed: true }, { closed: false }]}
+          closed={false}
+        />
+      </TouchableOpacity>
     );
   }
 }

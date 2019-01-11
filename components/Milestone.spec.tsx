@@ -39,10 +39,7 @@ describe('Milestone', () => {
     expect(valueFromWrapper(wrapper, 'date')).toBe('Due by 01/01/2020');
   });
 
-  it("should display it's tasks when clicked on it", () => {
-    wrapper.props().onPress();
-    expect(navigateFn).toHaveBeenCalledWith('Task', { name: 'Task 1' });
-  });
+
 
   describe('with no closed tasks', () => {
     it('should calculate percentage as 0', () => {
