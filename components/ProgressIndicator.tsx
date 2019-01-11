@@ -13,21 +13,21 @@ export default class ProgressIndicator extends React.Component<
     this.state = {};
   }
 
-  render() {
-    const getColor = (percentage: number) => {
-      const percColors = [
-        { color: 'grey', perc: -1 },
-        { color: 'red', perc: 30 },
-        { color: 'orange', perc: 70 },
-        { color: 'green', perc: 100 },
-      ];
+  getColor = (percentage: number) => {
+    const percColors = [
+      { color: 'grey', perc: -1 },
+      { color: 'red', perc: 30 },
+      { color: 'orange', perc: 70 },
+      { color: 'green', perc: 100 },
+    ];
 
-      return percColors.find(x => percentage <= x.perc)!.color;
-    };
+    return percColors.find(x => percentage <= x.perc)!.color;
+  };
+  render() {
     return (
       <View
         style={{
-          backgroundColor: getColor(this.props.percentage),
+          backgroundColor: this.getColor(this.props.percentage),
           height: 50,
           width: 5,
         }}
