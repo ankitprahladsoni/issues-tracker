@@ -5,9 +5,9 @@ import MilestoneScreen from './MilestoneScreen';
 import StoriesScreen from './StoriesScreen';
 
 const TabNavigator = createMaterialTopTabNavigator({
-  Bugs: BugsScreen,
   Milestone: MilestoneScreen,
   Stories: StoriesScreen,
+  Bugs: BugsScreen,
 });
 
 export default class RepositoryScreen extends React.Component {

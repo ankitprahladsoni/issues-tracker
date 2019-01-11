@@ -23,6 +23,7 @@
       }
     ],
     "no-unused-variable": true,
-    "semicolon": [true, "always", "ignore-bound-class-methods"]
+    "semicolon": [true, "always", "ignore-bound-class-methods"],
+    "object-literal-sort-keys": false
   }
 }
