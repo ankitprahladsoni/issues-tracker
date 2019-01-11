@@ -712,6 +712,11 @@
   resolved "https://registry.yarnpkg.com/@types/invariant/-/invariant-2.2.29.tgz#aa845204cd0a289f65d47e0de63a6a815e30cc66"
   integrity sha512-lRVw09gOvgviOfeUrKc/pmTiRZ7g7oDOU6OAutyuSHpm1/o2RaBQvRhgK8QEdu+FFuw/wnWb29A/iuxv9i8OpQ==
 
+"@types/jest-each@^0.3.3":
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@types/jest-each/-/jest-each-0.3.3.tgz#ea76aea22f5dd7bfd487298dd717c71fda47fc78"
+  integrity sha512-7lo+h0JX4ttYx9pXg5Ed+repH7R2ISmeLgrVOK5xJ+H4+g1MdkuOUduxVZvsNuscvTWVMRMKrPTuafjYTBgHaA==
+
 "@types/jest@^23.3.12":
   version "23.3.12"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.12.tgz#7e0ced251fa94c3bc2d1023d4b84b2992fa06376"

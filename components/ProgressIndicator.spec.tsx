@@ -2,26 +2,17 @@ import { shallow } from 'enzyme';
 import React from 'react';
 import ProgressIndicator from './ProgressIndicator';
 
-it('should have Grey band if there are no tasks in it', () => {
-  const wrapper = shallow(<ProgressIndicator percentage={-1} />);
+it.each`
+  color       | percentage
+  ${'grey'}   | ${-1}
+  ${'red'}    | ${25}
+  ${'orange'} | ${60}
+  ${'green'}  | ${95}
+`(
+  'should have $color band if $percent tasks are completed',
+  ({ color, percentage }) => {
+    const wrapper = shallow(<ProgressIndicator percentage={percentage} />);
 
-  expect(wrapper.prop('style')).toHaveProperty('backgroundColor', 'grey');
-});
-
-it('should have Red band if <30% tasks are completed', () => {
-  const wrapper = shallow(<ProgressIndicator percentage={25} />);
-
-  expect(wrapper.prop('style')).toHaveProperty('backgroundColor', 'red');
-});
-
-it('should have Yellow band if 30%-70% tasks are completed', () => {
-  const wrapper = shallow(<ProgressIndicator percentage={60} />);
-
-  expect(wrapper.prop('style')).toHaveProperty('backgroundColor', 'orange');
-});
-
-it('should have Green band if > 70% tasks are completed', () => {
-  const wrapper = shallow(<ProgressIndicator percentage={95} />);
-
-  expect(wrapper.prop('style')).toHaveProperty('backgroundColor', 'green');
-});
+    expect(wrapper.prop('style')).toHaveProperty('backgroundColor', color);
+  }
+);
