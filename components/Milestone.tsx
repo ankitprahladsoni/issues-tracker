@@ -1,6 +1,5 @@
 import React from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
-import { NavigationScreenProps } from 'react-navigation';
+import { Text, View } from 'react-native';
 import ProgressIndicator from './ProgressIndicator';
 import TaskCounter from './TaskCounter';
 import TaskModal from './TaskModal';

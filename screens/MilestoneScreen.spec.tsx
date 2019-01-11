@@ -14,7 +14,7 @@ function createTestProps<T>(props: T) {
 }
 
 it("should display it's tasks when clicked on it", () => {
-  let props: any = createTestProps({});
+  const props: any = createTestProps({});
   const wrapper = shallow(<MilestoneScreen {...props} />);
   wrapper.props().onPress();
   expect(navigateFn).toHaveBeenCalledWith('Task', { name: 'Task 1' });

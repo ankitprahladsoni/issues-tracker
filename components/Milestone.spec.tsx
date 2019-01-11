@@ -39,8 +39,6 @@ describe('Milestone', () => {
     expect(valueFromWrapper(wrapper, 'date')).toBe('Due by 01/01/2020');
   });
 
-
-
   describe('with no closed tasks', () => {
     it('should calculate percentage as 0', () => {
       props = createTestProps({
