@@ -10,11 +10,10 @@ addons:
     organization: 'ankitprahladsoni-github'
     token:
       secure: $SONAR_TOKEN
-env:
-  - TEST_SUITE="yarn jest --coverage"
-  - TEST_SUITE="yarn tslint -t json -o report.json --force"
-  - TEST_SUITE="sonar-scanner"
-script: $TEST_SUITE
+script:
+  - yarn jest --coverage
+  - yarn tslint -t json -o report.json --force
+  - sonar-scanner
 notifications:
   email: false
 after_success:
