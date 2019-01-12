@@ -1,7 +1,7 @@
 import React from 'react';
 import {
-  createMaterialTopTabNavigator,
   createAppContainer,
+  createMaterialTopTabNavigator,
 } from 'react-navigation';
 import BugsScreen from './BugsScreen';
 import MilestoneScreen from './MilestoneScreen';
