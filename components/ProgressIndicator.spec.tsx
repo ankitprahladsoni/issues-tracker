@@ -9,7 +9,7 @@ it.each`
   ${'orange'} | ${60}
   ${'green'}  | ${95}
 `(
-  'should have $color band if $percent tasks are completed',
+  'should have $color band if $percentage tasks are completed',
   ({ color, percentage }) => {
     const wrapper = shallow(<ProgressIndicator percentage={percentage} />);
 
