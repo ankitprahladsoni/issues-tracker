@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import MilestoneScreen from './MilestoneScreen';
+import MilestoneScreen from './MilestonesScreen';
 
 const navigateFn = jest.fn();
 function createTestProps<T>(props: T) {

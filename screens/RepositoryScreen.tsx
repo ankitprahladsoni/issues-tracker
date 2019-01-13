@@ -1,7 +1,7 @@
 import React from 'react';
 import { createAppContainer, createBottomTabNavigator } from 'react-navigation';
 import BugsScreen from './BugsScreen';
-import MilestoneScreen from './MilestoneScreen';
+import MilestoneScreen from './MilestonesScreen';
 import StoriesScreen from './StoriesScreen';
 
 const TabNavigator = createAppContainer(

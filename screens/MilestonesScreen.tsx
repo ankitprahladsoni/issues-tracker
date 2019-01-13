@@ -3,7 +3,7 @@ import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import { NavigationScreenProps } from 'react-navigation';
 
-export default class MilestoneScreen extends React.Component<
+export default class MilestonesScreen extends React.Component<
   NavigationScreenProps
 > {
   navigateTo = () => this.props.navigation.navigate('Task', { name: 'Task 1' });
