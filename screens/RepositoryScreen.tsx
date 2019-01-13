@@ -1,14 +1,11 @@
 import React from 'react';
-import {
-  createAppContainer,
-  createMaterialTopTabNavigator,
-} from 'react-navigation';
+import { createAppContainer, createBottomTabNavigator } from 'react-navigation';
 import BugsScreen from './BugsScreen';
 import MilestoneScreen from './MilestoneScreen';
 import StoriesScreen from './StoriesScreen';
 
 const TabNavigator = createAppContainer(
-  createMaterialTopTabNavigator({
+  createBottomTabNavigator({
     Milestone: MilestoneScreen,
     Stories: StoriesScreen,
     Bugs: BugsScreen,
