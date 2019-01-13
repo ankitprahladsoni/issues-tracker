@@ -1,6 +1,9 @@
+import AddButton from 'components/AddButton';
+import Filters from 'components/Filters';
 import Milestone from 'components/Milestone';
+import OpenClose from 'components/OpenClose';
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 import { NavigationScreenProps } from 'react-navigation';
 
 export default class MilestonesScreen extends React.Component<
@@ -10,14 +13,21 @@ export default class MilestonesScreen extends React.Component<
 
   render() {
     return (
-      <TouchableOpacity onPress={this.navigateTo}>
-        <Milestone
-          name="test"
-          dueDate="01/01/2020"
-          tasks={[{ closed: true }, { closed: false }]}
-          closed={false}
-        />
-      </TouchableOpacity>
+      <View>
+        <View>
+          <OpenClose />
+          <Filters />
+          <AddButton />
+        </View>
+        <TouchableOpacity onPress={this.navigateTo} testID="milestone">
+          <Milestone
+            name="test"
+            dueDate="01/01/2020"
+            tasks={[{ closed: true }, { closed: false }]}
+            closed={false}
+          />
+        </TouchableOpacity>
+      </View>
     );
   }
 }
