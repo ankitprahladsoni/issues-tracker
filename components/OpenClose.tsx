@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Button } from 'react-native';
 
 export interface OpenCloseProps {}
 
@@ -15,6 +16,19 @@ export default class OpenClose extends React.Component<
   }
 
   render() {
-    return <div />;
+    return (
+      <View>
+        <Button
+          testID="open-button"
+          title="Open"
+          onPress={() => console.log('Open called')}
+        />
+        <Button
+          testID="closed-button"
+          title="Closed"
+          onPress={() => console.log('Closed called')}
+        />
+      </View>
+    );
   }
 }

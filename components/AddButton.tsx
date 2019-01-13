@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Button } from 'react-native';
 
 export interface AddButtonProps {}
 
@@ -15,6 +16,14 @@ export default class AddButton extends React.Component<
   }
 
   render() {
-    return <div />;
+    return (
+      <View>
+        <Button
+          testID="add-button"
+          title="Add"
+          onPress={() => console.log('Add called')}
+        />
+      </View>
+    );
   }
 }

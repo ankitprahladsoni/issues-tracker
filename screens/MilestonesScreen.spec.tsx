@@ -9,12 +9,12 @@ import {
 import MilestonesScreen from './MilestonesScreen';
 
 const navigateFn = jest.fn();
-function createTestProps<T>(props: T) {
+function createTestProps<T>(otherProps: T) {
   return {
     navigation: {
       navigate: navigateFn,
     },
-    ...props,
+    ...otherProps,
   };
 }
 
