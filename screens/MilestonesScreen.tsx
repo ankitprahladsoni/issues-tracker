@@ -14,11 +14,6 @@ export default class MilestonesScreen extends React.Component<
   render() {
     return (
       <View>
-        <View>
-          <OpenClose />
-          <Filters />
-          <AddButton />
-        </View>
         <TouchableOpacity onPress={this.navigateTo} testID="milestone">
           <Milestone
             name="test"
