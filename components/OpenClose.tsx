@@ -1,32 +1,24 @@
 import React from 'react';
 import { View, Button } from 'react-native';
 
-export interface OpenCloseProps {}
+export interface OpenCloseProps {
+  showOpen: Function;
+  showClosed: Function;
+}
 
-export interface OpenCloseState {}
-
-export default class OpenClose extends React.Component<
-  OpenCloseProps,
-  OpenCloseState
-> {
-  constructor(props: OpenCloseProps) {
-    super(props);
-
-    this.state = {};
-  }
-
+export default class OpenClose extends React.Component<OpenCloseProps> {
   render() {
     return (
       <View>
         <Button
           testID="open-button"
           title="Open"
-          onPress={() => console.log('Open called')}
+          onPress={() => this.props.showOpen()}
         />
         <Button
           testID="closed-button"
           title="Closed"
-          onPress={() => console.log('Closed called')}
+          onPress={() => this.props.showClosed()}
         />
       </View>
     );

@@ -8,7 +8,7 @@ import OpenClose from 'components/OpenClose';
 import Filters from 'components/Filters';
 import AddButton from 'components/AddButton';
 
-const TabNavigator = createAppContainer(
+export const TabNavigator = createAppContainer(
   createBottomTabNavigator({
     Milestone: MilestonesScreen,
     Stories: StoriesScreen,
@@ -20,13 +20,18 @@ export default class RepositoryScreen extends React.Component {
   static navigationOptions = {
     title: 'Repository!!!',
   };
+  state = { closed: false };
+
+  showOpen = () => this.setState({ closed: false });
+  showClosed = () => this.setState({ closed: true });
+
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <OpenClose />
+        <OpenClose showOpen={this.showOpen} showClosed={this.showClosed} />
         <Filters />
         <AddButton />
-        <TabNavigator />
+        <TabNavigator screenProps={{ closed: this.state.closed }} />
       </View>
     );
   }

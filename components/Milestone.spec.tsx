@@ -5,14 +5,10 @@ import Milestone from './Milestone';
 import ProgressIndicator from './ProgressIndicator';
 import TaskCounter from './TaskCounter';
 
-const navigateFn = jest.fn();
 function createTestProps<T>(props: T) {
   return {
     closed: false,
     dueDate: '01/01/2020',
-    navigation: {
-      navigate: navigateFn,
-    },
     tasks: [],
     ...props,
   };
