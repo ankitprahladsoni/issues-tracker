@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import OpenClose from './OpenClose';
 import { elementFromWrapper } from 'testUtils/ElementUtils';
 
-const wrapper = shallow(<OpenClose />);
+const wrapper = shallow(<OpenClose showOpen={jest.fn} showClosed={jest.fn}/>);
 it('should have Button called Open', () => {
   expect(elementFromWrapper(wrapper, 'open-button').length).toBe(1);
 });
