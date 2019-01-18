@@ -1,18 +1,39 @@
 import React from 'react';
-import { Button, View } from 'react-native';
+import { Button, View, Modal, Text, TouchableHighlight } from 'react-native';
 
 export interface IAddButtonProps {
   type: string;
 }
 
 export default class AddButton extends React.Component<IAddButtonProps> {
+  state = {
+    modalVisible: false,
+  };
+
+  setModalVisible(visible: boolean) {
+    this.setState({ modalVisible: visible });
+  }
   render() {
     return (
       <View>
+        <Modal
+          animationType="slide"
+          transparent={false}
+          visible={this.state.modalVisible}
+        >
+          <View>
+            <Text>Add stuff here</Text>
+            <TouchableHighlight
+              onPress={() => this.setModalVisible(!this.state.modalVisible)}
+            >
+              <Text>Hide Modal</Text>
+            </TouchableHighlight>
+          </View>
+        </Modal>
         <Button
           testID="add-button"
           title="Add"
-          onPress={() => console.log('Add called')}
+          onPress={() => this.setModalVisible(true)}
         />
       </View>
     );

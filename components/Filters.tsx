@@ -34,9 +34,7 @@ export default class Filters extends React.Component<IFiltersProps> {
         <Button
           testID="filters-button"
           title="Filters"
-          onPress={() => {
-            this.setModalVisible(true);
-          }}
+          onPress={() => this.setModalVisible(true)}
         />
       </View>
     );
