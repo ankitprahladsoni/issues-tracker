@@ -1,11 +1,11 @@
 import { shallow } from 'enzyme';
 import React from 'react';
+import { Modal } from 'react-native';
 import {
   elementFromWrapper,
   propsForElementInsideWrapper,
 } from 'testUtils/ElementUtils';
 import Filters from './Filters';
-import { Modal } from 'react-native';
 
 const wrapper = shallow(<Filters type="milestone" />);
 it('should have Button called Filters', () => {

@@ -1,11 +1,11 @@
 import { shallow } from 'enzyme';
 import React from 'react';
+import { Modal } from 'react-native';
 import {
   elementFromWrapper,
   propsForElementInsideWrapper,
 } from 'testUtils/ElementUtils';
 import AddButton from './AddButton';
-import { Modal } from 'react-native';
 
 const wrapper = shallow(<AddButton type="milestone" />);
 it('should have Button called Add', () => {

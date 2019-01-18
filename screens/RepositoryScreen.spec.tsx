@@ -1,15 +1,10 @@
 import AddButton from 'components/AddButton';
 import Filters from 'components/Filters';
 import OpenClose from 'components/OpenClose';
-import { shallow, ShallowWrapper } from 'enzyme';
+import { shallow } from 'enzyme';
 import React from 'react';
 import { propsForElementInsideWrapper } from 'testUtils/ElementUtils';
 import RepositoryScreen, { TabNavigator } from './RepositoryScreen';
-
-let wrapper: ShallowWrapper;
-beforeEach(() => {
-  wrapper = shallow(<RepositoryScreen />);
-});
 
 describe('For Open/Closed button', () => {
   const wrapper = shallow(<RepositoryScreen />);
@@ -29,10 +24,14 @@ describe('For Open/Closed button', () => {
   });
 });
 
-it('should have a Filters component', () => {
-  expect(wrapper.find(Filters).length).toBe(1);
-});
+describe('RepositoryScreen', () => {
+  const wrapper = shallow(<RepositoryScreen />);
 
-it('should have a AddButton component', () => {
-  expect(wrapper.find(AddButton).length).toBe(1);
+  it('should have a Filters component', () => {
+    expect(wrapper.find(Filters).length).toBe(1);
+  });
+
+  it('should have a AddButton component', () => {
+    expect(wrapper.find(AddButton).length).toBe(1);
+  });
 });

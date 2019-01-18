@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, View, Modal, Text, TouchableHighlight } from 'react-native';
+import { Button, Modal, Text, TouchableHighlight, View } from 'react-native';
 
 export interface IFiltersProps {
   type: string;
