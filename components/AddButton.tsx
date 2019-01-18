@@ -1,7 +1,11 @@
 import React from 'react';
-import { View, Button } from 'react-native';
+import { Button, View } from 'react-native';
 
-export default class AddButton extends React.Component {
+export interface IAddButtonProps {
+  type: string;
+}
+
+export default class AddButton extends React.Component<IAddButtonProps> {
   render() {
     return (
       <View>

@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, Button } from 'react-native';
+import { Button, View } from 'react-native';
 
-export interface OpenCloseProps {
-  showOpen: Function;
-  showClosed: Function;
+export interface IOpenCloseProps {
+  showOpen: () => void;
+  showClosed: () => void;
 }
 
-export default class OpenClose extends React.Component<OpenCloseProps> {
+export default class OpenClose extends React.Component<IOpenCloseProps> {
   render() {
     return (
       <View>

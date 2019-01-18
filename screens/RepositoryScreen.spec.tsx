@@ -1,16 +1,32 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import RepositoryScreen, { TabNavigator } from './RepositoryScreen';
-import OpenClose from 'components/OpenClose';
-import Filters from 'components/Filters';
 import AddButton from 'components/AddButton';
+import Filters from 'components/Filters';
+import OpenClose from 'components/OpenClose';
+import { shallow, ShallowWrapper } from 'enzyme';
+import React from 'react';
 import { propsForElementInsideWrapper } from 'testUtils/ElementUtils';
-import Milestone from 'components/Milestone';
-import renderer from 'react-test-renderer';
+import RepositoryScreen, { TabNavigator } from './RepositoryScreen';
 
-const wrapper = shallow(<RepositoryScreen />);
-it('should have a OpenClose component', () => {
-  expect(wrapper.find(OpenClose).length).toBe(1);
+let wrapper: ShallowWrapper;
+beforeEach(() => {
+  wrapper = shallow(<RepositoryScreen />);
+});
+
+describe('For Open/Closed button', () => {
+  const wrapper = shallow(<RepositoryScreen />);
+  const openClose = wrapper.find(OpenClose).shallow();
+
+  describe.each`
+    button      | buttonId           | shouldShowOpen
+    ${'Open'}   | ${'open-button'}   | ${true}
+    ${'Closed'} | ${'closed-button'} | ${false}
+  `('When $button button is pressed', ({ buttonId, shouldShowOpen }) => {
+    it('should pass screenProps.shouldShowOpen as $shouldShowOpen', () => {
+      propsForElementInsideWrapper(openClose, buttonId).onPress();
+      const screenProps = wrapper.find(TabNavigator).props().screenProps;
+
+      expect(screenProps.shouldShowOpen).toBe(shouldShowOpen);
+    });
+  });
 });
 
 it('should have a Filters component', () => {
@@ -19,27 +35,4 @@ it('should have a Filters component', () => {
 
 it('should have a AddButton component', () => {
   expect(wrapper.find(AddButton).length).toBe(1);
-});
-
-describe('For Open/Closed button', () => {
-  const wrapper = shallow(<RepositoryScreen />);
-  const openClose = wrapper.find(OpenClose).shallow();
-
-  describe('When Open button is pressed', () => {
-    it('should pass screenProps as { closed: false }', () => {
-      propsForElementInsideWrapper(openClose, 'open-button').onPress();
-      const screenProps = wrapper.find(TabNavigator).props().screenProps;
-
-      expect(screenProps.shouldShowOpen).toBeTruthy();
-    });
-  });
-
-  describe('When Closed button is pressed', () => {
-    it('should pass screenProps as { closed: true }', () => {
-      propsForElementInsideWrapper(openClose, 'closed-button').onPress();
-      const screenProps = wrapper.find(TabNavigator).props().screenProps;
-
-      expect(screenProps.shouldShowOpen).toBeFalsy();
-    });
-  });
 });

@@ -1,12 +1,12 @@
+import AddButton from 'components/AddButton';
+import Filters from 'components/Filters';
+import OpenClose from 'components/OpenClose';
 import React from 'react';
+import { View } from 'react-native';
 import { createAppContainer, createBottomTabNavigator } from 'react-navigation';
 import BugsScreen from './BugsScreen';
 import MilestonesScreen from './MilestonesScreen';
 import StoriesScreen from './StoriesScreen';
-import { View } from 'react-native';
-import OpenClose from 'components/OpenClose';
-import Filters from 'components/Filters';
-import AddButton from 'components/AddButton';
 
 export const TabNavigator = createAppContainer(
   createBottomTabNavigator({
@@ -48,8 +48,8 @@ export default class RepositoryScreen extends React.Component {
     return (
       <View style={{ flex: 1 }}>
         <OpenClose showOpen={this.showOpen} showClosed={this.showClosed} />
-        <Filters />
-        <AddButton />
+        <Filters type="milestone" />
+        <AddButton type="milestone" />
         <TabNavigator
           screenProps={{
             shouldShowOpen: this.state.shouldShowOpen,

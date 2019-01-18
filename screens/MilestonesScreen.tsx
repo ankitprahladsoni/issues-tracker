@@ -1,11 +1,8 @@
-import AddButton from 'components/AddButton';
-import Filters from 'components/Filters';
 import Milestone from 'components/Milestone';
-import OpenClose from 'components/OpenClose';
+import MilestoneModal from 'components/MilestoneModal';
 import React from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import { NavigationScreenProps } from 'react-navigation';
-import MilestoneModal from 'components/MilestoneModal';
 
 export default class MilestonesScreen extends React.Component<
   NavigationScreenProps
@@ -16,7 +13,7 @@ export default class MilestonesScreen extends React.Component<
     const milestones: MilestoneModal[] = this.props.screenProps!.milestones;
 
     const milestoneComponents = milestones
-      .filter(m => m.closed != this.props.screenProps!.shouldShowOpen)
+      .filter(m => m.closed !== this.props.screenProps!.shouldShowOpen)
       .map((m, index) => (
         <TouchableOpacity
           onPress={this.navigateTo}

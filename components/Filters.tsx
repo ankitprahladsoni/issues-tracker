@@ -1,7 +1,10 @@
 import React from 'react';
-import { View, Button } from 'react-native';
+import { Button, View } from 'react-native';
+export interface IFiltersProps {
+  type: string;
+}
 
-export default class Filters extends React.Component {
+export default class Filters extends React.Component<IFiltersProps> {
   render() {
     return (
       <View>

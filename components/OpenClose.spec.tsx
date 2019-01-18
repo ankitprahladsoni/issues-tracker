@@ -1,7 +1,7 @@
-import React from 'react';
 import { shallow } from 'enzyme';
-import OpenClose from './OpenClose';
+import React from 'react';
 import { elementFromWrapper } from 'testUtils/ElementUtils';
+import OpenClose from './OpenClose';
 
 const wrapper = shallow(<OpenClose showOpen={jest.fn} showClosed={jest.fn}/>);
 it('should have Button called Open', () => {
