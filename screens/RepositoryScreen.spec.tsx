@@ -30,7 +30,7 @@ describe('For Open/Closed button', () => {
       propsForElementInsideWrapper(openClose, 'open-button').onPress();
       const screenProps = wrapper.find(TabNavigator).props().screenProps;
 
-      expect(screenProps).toEqual({ closed: false });
+      expect(screenProps.shouldShowOpen).toBeTruthy();
     });
   });
 
@@ -39,7 +39,7 @@ describe('For Open/Closed button', () => {
       propsForElementInsideWrapper(openClose, 'closed-button').onPress();
       const screenProps = wrapper.find(TabNavigator).props().screenProps;
 
-      expect(screenProps).toEqual({ closed: true });
+      expect(screenProps.shouldShowOpen).toBeFalsy();
     });
   });
 });

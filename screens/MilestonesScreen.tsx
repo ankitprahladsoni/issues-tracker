@@ -5,6 +5,7 @@ import OpenClose from 'components/OpenClose';
 import React from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import { NavigationScreenProps } from 'react-navigation';
+import MilestoneModal from 'components/MilestoneModal';
 
 export default class MilestonesScreen extends React.Component<
   NavigationScreenProps
@@ -12,17 +13,19 @@ export default class MilestonesScreen extends React.Component<
   navigateTo = () => this.props.navigation.navigate('Task', { name: 'Task 1' });
 
   render() {
-    return (
-      <View>
-        <TouchableOpacity onPress={this.navigateTo} testID="milestone">
-          <Milestone
-            name="test"
-            dueDate="01/01/2020"
-            tasks={[{ closed: true }, { closed: false }]}
-            closed={false}
-          />
+    const milestones: MilestoneModal[] = this.props.screenProps!.milestones;
+
+    const milestoneComponents = milestones
+      .filter(m => m.closed != this.props.screenProps!.shouldShowOpen)
+      .map((m, index) => (
+        <TouchableOpacity
+          onPress={this.navigateTo}
+          testID={`milestone${index}`}
+        >
+          <Milestone {...m} />
         </TouchableOpacity>
-      </View>
-    );
+      ));
+
+    return <View>{milestoneComponents}</View>;
   }
 }

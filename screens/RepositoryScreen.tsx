@@ -20,10 +20,29 @@ export default class RepositoryScreen extends React.Component {
   static navigationOptions = {
     title: 'Repository!!!',
   };
-  state = { closed: false };
+  state = { shouldShowOpen: true, milestones: [] };
 
-  showOpen = () => this.setState({ closed: false });
-  showClosed = () => this.setState({ closed: true });
+  showOpen = () => this.setState({ shouldShowOpen: true });
+  showClosed = () => this.setState({ shouldShowOpen: false });
+
+  componentDidMount() {
+    this.setState({
+      milestones: [
+        {
+          name: 'test Open',
+          dueDate: '01/01/2020',
+          tasks: [{ closed: true }, { closed: false }],
+          closed: false,
+        },
+        {
+          name: 'test Closed',
+          dueDate: '01/01/2020',
+          tasks: [{ closed: true }, { closed: false }],
+          closed: true,
+        },
+      ],
+    });
+  }
 
   render() {
     return (
@@ -31,7 +50,12 @@ export default class RepositoryScreen extends React.Component {
         <OpenClose showOpen={this.showOpen} showClosed={this.showClosed} />
         <Filters />
         <AddButton />
-        <TabNavigator screenProps={{ closed: this.state.closed }} />
+        <TabNavigator
+          screenProps={{
+            shouldShowOpen: this.state.shouldShowOpen,
+            milestones: this.state.milestones,
+          }}
+        />
       </View>
     );
   }

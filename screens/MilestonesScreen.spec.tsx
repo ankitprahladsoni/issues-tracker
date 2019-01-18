@@ -1,25 +1,67 @@
-import AddButton from 'components/AddButton';
-import Filters from 'components/Filters';
-import OpenClose from 'components/OpenClose';
 import { shallow } from 'enzyme';
 import React from 'react';
 import { propsForElementInsideWrapper } from 'testUtils/ElementUtils';
 import MilestonesScreen from './MilestonesScreen';
+import Milestone from 'components/Milestone';
+import { TouchableOpacity } from 'react-native';
 
+const openMilestone = {
+  name: 'test Open',
+  dueDate: '01/01/2020',
+  tasks: [{ closed: true }, { closed: false }],
+  closed: false,
+};
+const closedMilestone = {
+  name: 'test Closed',
+  dueDate: '01/01/2020',
+  tasks: [{ closed: true }, { closed: false }],
+  closed: true,
+};
 const navigateFn = jest.fn();
 function createTestProps<T>(otherProps: T) {
   return {
     navigation: {
       navigate: navigateFn,
     },
+    screenProps: {
+      milestones: [openMilestone, closedMilestone],
+      shouldShowOpen: true,
+    },
     ...otherProps,
   };
 }
 
-const props: any = createTestProps({});
-const wrapper = shallow(<MilestonesScreen {...props} />);
-
 it("should display it's tasks when clicked on it", () => {
-  propsForElementInsideWrapper(wrapper, 'milestone').onPress();
+  const props: any = createTestProps({});
+  const wrapper = shallow(<MilestonesScreen {...props} />);
+
+  propsForElementInsideWrapper(wrapper, 'milestone0').onPress();
   expect(navigateFn).toHaveBeenCalledWith('Task', { name: 'Task 1' });
+});
+
+describe('MilestonesScreen', () => {
+  describe.each`
+    shouldShowOpen | milestoneProps
+    ${true}        | ${openMilestone}
+    ${false}       | ${closedMilestone}
+  `(
+    'When having screenProp shouldShowOpen: $shouldShowOpen',
+    ({ shouldShowOpen, milestoneProps }) => {
+      it('should only display milestones with props $milestoneProps', () => {
+        const props: any = createTestProps({});
+        props.screenProps.shouldShowOpen = shouldShowOpen;
+        const wrapper = shallow(<MilestonesScreen {...props} />);
+
+        const touchableOpacityWrapper = wrapper.find(TouchableOpacity);
+        expect(touchableOpacityWrapper.length).toBe(1);
+
+        expect(
+          touchableOpacityWrapper
+            .first()
+            .shallow()
+            .containsMatchingElement(<Milestone {...milestoneProps} />)
+        ).toBeTruthy();
+      });
+    }
+  );
 });
