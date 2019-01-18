@@ -25,6 +25,7 @@ export default class Filters extends React.Component<IFiltersProps> {
           <View>
             <Text>filters</Text>
             <TouchableHighlight
+              testID="close"
               onPress={() => this.setModalVisible(!this.state.modalVisible)}
             >
               <Text>Hide Modal</Text>

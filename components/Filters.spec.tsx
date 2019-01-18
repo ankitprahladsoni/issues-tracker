@@ -22,5 +22,14 @@ describe('When pressed', () => {
         .shallow()
         .props().visible
     ).toBeTruthy();
+
+    propsForElementInsideWrapper(wrapper, 'close').onPress();
+    expect(
+      wrapper
+        .find(Modal)
+        .first()
+        .shallow()
+        .props().visible
+    ).toBeFalsy();
   });
 });

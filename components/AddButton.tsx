@@ -24,6 +24,7 @@ export default class AddButton extends React.Component<IAddButtonProps> {
           <View>
             <Text>Add stuff here</Text>
             <TouchableHighlight
+              testID="close"
               onPress={() => this.setModalVisible(!this.state.modalVisible)}
             >
               <Text>Hide Modal</Text>
