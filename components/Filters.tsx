@@ -1,20 +1,7 @@
 import React from 'react';
 import { View, Button } from 'react-native';
 
-export interface FiltersProps {}
-
-export interface FiltersState {}
-
-export default class Filters extends React.Component<
-  FiltersProps,
-  FiltersState
-> {
-  constructor(props: FiltersProps) {
-    super(props);
-
-    this.state = {};
-  }
-
+export default class Filters extends React.Component {
   render() {
     return (
       <View>

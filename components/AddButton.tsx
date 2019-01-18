@@ -1,20 +1,7 @@
 import React from 'react';
 import { View, Button } from 'react-native';
 
-export interface AddButtonProps {}
-
-export interface AddButtonState {}
-
-export default class AddButton extends React.Component<
-  AddButtonProps,
-  AddButtonState
-> {
-  constructor(props: AddButtonProps) {
-    super(props);
-
-    this.state = {};
-  }
-
+export default class AddButton extends React.Component {
   render() {
     return (
       <View>
