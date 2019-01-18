@@ -18,6 +18,7 @@ export default class MilestonesScreen extends React.Component<
         <TouchableOpacity
           onPress={this.navigateTo}
           testID={`milestone${index}`}
+          key={index}
         >
           <Milestone {...m} />
         </TouchableOpacity>
