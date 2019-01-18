@@ -7,11 +7,6 @@ export interface ITaskCounterProps {
 }
 
 export default class TaskCounter extends React.Component<ITaskCounterProps> {
-  constructor(props: ITaskCounterProps) {
-    super(props);
-    this.state = {};
-  }
-
   counterText = (tasks: TaskModal[]) => {
     if (tasks.length === 0) {
       return 'No Tasks';

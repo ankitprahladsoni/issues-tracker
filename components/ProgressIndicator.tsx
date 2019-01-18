@@ -8,11 +8,6 @@ export interface IProgressIndicatorProps {
 export default class ProgressIndicator extends React.Component<
   IProgressIndicatorProps
 > {
-  constructor(props: IProgressIndicatorProps) {
-    super(props);
-    this.state = {};
-  }
-
   getColor = (percentage: number) => {
     const percColors = [
       { color: 'grey', perc: -1 },
