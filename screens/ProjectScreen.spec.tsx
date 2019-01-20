@@ -4,10 +4,10 @@ import OpenClose from 'components/OpenClose';
 import { shallow } from 'enzyme';
 import React from 'react';
 import { propsForElementInsideWrapper } from 'testUtils/ElementUtils';
-import RepositoryScreen, { TabNavigator } from './RepositoryScreen';
+import ProjectScreen, { TabNavigator } from './ProjectScreen';
 
 describe('For Open/Closed button', () => {
-  const wrapper = shallow(<RepositoryScreen />);
+  const wrapper = shallow(<ProjectScreen />);
   const openClose = wrapper.find(OpenClose).shallow();
 
   describe.each`
@@ -25,7 +25,7 @@ describe('For Open/Closed button', () => {
 });
 
 describe('RepositoryScreen', () => {
-  const wrapper = shallow(<RepositoryScreen />);
+  const wrapper = shallow(<ProjectScreen />);
 
   it('should have a Filters component', () => {
     expect(wrapper.find(Filters).length).toBe(1);

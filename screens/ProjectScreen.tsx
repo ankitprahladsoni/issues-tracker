@@ -16,7 +16,7 @@ export const TabNavigator = createAppContainer(
   })
 );
 
-export default class RepositoryScreen extends React.Component {
+export default class ProjectScreen extends React.Component {
   static navigationOptions = {
     title: 'Repository!!!',
   };
