@@ -5,7 +5,6 @@
         "**/.jest": true,
         "**/.vscode": true,
         "**/.watchmanconfig": true,
-        "**/babel.config.js": true,
         "**/coverage": true,
         "**/LICENSE": true,
         "**/node_modules": true,
