@@ -4,15 +4,13 @@ import OpenClose from 'components/OpenClose';
 import React from 'react';
 import { View } from 'react-native';
 import { createAppContainer, createBottomTabNavigator } from 'react-navigation';
-import BugsScreen from './BugsScreen';
 import MilestonesScreen from './milestones/MilestonesScreen';
-import StoriesScreen from './StoriesScreen';
+import IssuesScreen from './IssuesScreen';
 
 export const TabNavigator = createAppContainer(
   createBottomTabNavigator({
     Milestone: MilestonesScreen,
-    Stories: StoriesScreen,
-    Bugs: BugsScreen,
+    Stories: IssuesScreen,
   })
 );
 
