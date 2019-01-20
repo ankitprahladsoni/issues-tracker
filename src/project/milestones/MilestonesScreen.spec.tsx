@@ -1,7 +1,7 @@
-import Milestone from 'src/project/milestones/Milestone';
 import { shallow } from 'enzyme';
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
+import Milestone from 'src/project/milestones/Milestone';
 import { propsForElementInsideWrapper } from 'testUtils/ElementUtils';
 import MilestonesScreen from './MilestonesScreen';
 

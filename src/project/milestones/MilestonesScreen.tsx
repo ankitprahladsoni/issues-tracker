@@ -1,8 +1,8 @@
-import Milestone from 'src/project/milestones/Milestone';
-import MilestoneModal from 'src/project/milestones/MilestoneModal';
 import React from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import { NavigationScreenProps } from 'react-navigation';
+import Milestone from 'src/project/milestones/Milestone';
+import MilestoneModal from 'src/project/milestones/MilestoneModal';
 
 export default class MilestonesScreen extends React.Component<
   NavigationScreenProps
