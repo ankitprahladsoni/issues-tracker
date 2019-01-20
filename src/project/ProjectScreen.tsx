@@ -5,7 +5,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { createAppContainer, createBottomTabNavigator } from 'react-navigation';
 import BugsScreen from './BugsScreen';
-import MilestonesScreen from './MilestonesScreen';
+import MilestonesScreen from './milestones/MilestonesScreen';
 import StoriesScreen from './StoriesScreen';
 
 export const TabNavigator = createAppContainer(

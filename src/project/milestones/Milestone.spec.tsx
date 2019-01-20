@@ -2,8 +2,8 @@ import { shallow } from 'enzyme';
 import React from 'react';
 import { valueFromWrapper } from 'testUtils/ElementUtils';
 import Milestone from './Milestone';
-import ProgressIndicator from './ProgressIndicator';
-import TaskCounter from './TaskCounter';
+import ProgressIndicator from '../../components/ProgressIndicator';
+import TaskCounter from '../../components/TaskCounter';
 
 function createTestProps<T>(props: T) {
   return {

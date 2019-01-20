@@ -1,5 +1,5 @@
-import Milestone from 'components/Milestone';
-import MilestoneModal from 'components/MilestoneModal';
+import Milestone from 'src/project/milestones/Milestone';
+import MilestoneModal from 'src/project/milestones/MilestoneModal';
 import React from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import { NavigationScreenProps } from 'react-navigation';

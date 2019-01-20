@@ -1,8 +1,8 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import ProgressIndicator from './ProgressIndicator';
-import TaskCounter from './TaskCounter';
-import TaskModal from './TaskModal';
+import ProgressIndicator from '../../components/ProgressIndicator';
+import TaskCounter from '../../components/TaskCounter';
+import TaskModal from '../../components/TaskModal';
 
 export interface IMilestoneProps {
   name: string;

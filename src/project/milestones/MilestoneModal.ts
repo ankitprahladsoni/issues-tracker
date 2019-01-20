@@ -1,4 +1,4 @@
-import TaskModal from './TaskModal';
+import TaskModal from '../../components/TaskModal';
 
 export default class MilestoneModal {
   closed: boolean;
