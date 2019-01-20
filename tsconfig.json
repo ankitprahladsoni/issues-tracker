@@ -7,7 +7,7 @@
     "baseUrl": "./",
     "paths": {
       "testUtils/*": ["testUtils/*"],
-      "components/*": ["components/*"]
+      "components/*": ["src/components/*"]
     },
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
