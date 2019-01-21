@@ -5,7 +5,7 @@ export function createMilestoneProps<T>(props: T) {
     status: Status.Open,
     openIssues: 0,
     closedIssues: 0,
-    dueOn: new Date('Mon, 21 Jan 2019 00:30:14 GMT'),
+    dueOn: new Date('Mon, 20 Jan 2020'),
     ...props,
   };
 }

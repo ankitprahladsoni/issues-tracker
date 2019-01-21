@@ -25,7 +25,7 @@ describe('Milestone', () => {
   });
 
   it('should show expected end time of the milestone', () => {
-    expect(valueFromWrapper(wrapper, 'date')).toBe('Due on Sun Jan 20 2019');
+    expect(valueFromWrapper(wrapper, 'date')).toBe('Due on Mon Jan 20 2020');
   });
 
   describe('with no closed issues', () => {
