@@ -1,10 +1,10 @@
+import IssuesCounter from 'components/IssuesCounter';
+import ProgressIndicator from 'components/ProgressIndicator';
 import { shallow } from 'enzyme';
 import React from 'react';
 import { valueFromWrapper } from 'testUtils/ElementUtils';
-import ProgressIndicator from 'components/ProgressIndicator';
-import IssuesCounter from 'components/IssuesCounter';
-import Milestone from './Milestone';
 import Status from '../Status';
+import Milestone from './Milestone';
 import { createMilestoneProps } from './MilestoneTestUtil';
 
 describe('Milestone', () => {

@@ -1,7 +1,7 @@
+import IssuesCounter from 'components/IssuesCounter';
+import ProgressIndicator from 'components/ProgressIndicator';
 import React from 'react';
 import { Text, View } from 'react-native';
-import ProgressIndicator from 'components/ProgressIndicator';
-import IssuesCounter from 'components/IssuesCounter';
 import Status from '../Status';
 
 export interface IMilestoneProps {

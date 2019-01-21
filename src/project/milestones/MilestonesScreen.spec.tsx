@@ -1,10 +1,10 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
-import Milestone from './Milestone';
 import { propsForElementInsideWrapper } from 'testUtils/ElementUtils';
-import MilestonesScreen from './MilestonesScreen';
 import Status from '../Status';
+import Milestone from './Milestone';
+import MilestonesScreen from './MilestonesScreen';
 import { createMilestoneProps } from './MilestoneTestUtil';
 
 const openMilestone = createMilestoneProps({});
