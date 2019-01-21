@@ -2,12 +2,12 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import ProgressIndicator from 'components/ProgressIndicator';
 import IssuesCounter from 'components/IssuesCounter';
-import State from '../State';
+import Status from '../Status';
 
 export interface IMilestoneProps {
   title: string;
   description: string;
-  state: State;
+  status: Status;
   openIssues: number;
   closedIssues: number;
   dueOn: Date;
@@ -16,7 +16,7 @@ export interface IMilestoneProps {
 }
 
 export default class Milestone extends React.Component<IMilestoneProps> {
-  taskCompletionPercent = () => {
+  issuesCompletionPercent = () => {
     const { openIssues, closedIssues } = this.props;
     return closedIssues === 0
       ? 0
@@ -30,11 +30,11 @@ export default class Milestone extends React.Component<IMilestoneProps> {
       closedIssues,
       dueOn,
       closedAt,
-      state,
+      status,
     } = this.props;
 
     const dateText =
-      state === State.Closed
+      status === Status.Closed
         ? `Closed at ${closedAt!.toUTCString()}`
         : `Due on ${dueOn.toDateString()}`;
 
@@ -43,7 +43,7 @@ export default class Milestone extends React.Component<IMilestoneProps> {
         <Text testID="milestone-title">{title}</Text>
         <Text testID="date">{dateText}</Text>
         <IssuesCounter openIssues={openIssues} closedIssues={closedIssues} />
-        <ProgressIndicator percentage={this.taskCompletionPercent()} />
+        <ProgressIndicator percentage={this.issuesCompletionPercent()} />
       </View>
     );
   }

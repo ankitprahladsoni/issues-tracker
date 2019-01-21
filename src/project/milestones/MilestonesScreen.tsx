@@ -6,13 +6,13 @@ import Milestone, { IMilestoneProps } from 'src/project/milestones/Milestone';
 export default class MilestonesScreen extends React.Component<
   NavigationScreenProps
 > {
-  navigateTo = () => this.props.navigation.navigate('Task', { name: 'Task 1' });
+  navigateTo = () => this.props.navigation.navigate('Issue', { name: 'Issue 1' });
 
   render() {
     const milestones: IMilestoneProps[] = this.props.screenProps!.milestones;
 
     const milestoneComponents = milestones
-      .filter(m => m.state === this.props.screenProps!.state)
+      .filter(m => m.status === this.props.screenProps!.status)
       .map((m, index) => (
         <TouchableOpacity
           onPress={this.navigateTo}

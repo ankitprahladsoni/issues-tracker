@@ -4,29 +4,19 @@ import { valueFromWrapper } from 'testUtils/ElementUtils';
 import ProgressIndicator from 'components/ProgressIndicator';
 import IssuesCounter from 'components/IssuesCounter';
 import Milestone from './Milestone';
-import State from '../State';
-
-function createTestProps<T>(props: T) {
-  return {
-    dueDate: '01/01/2020',
-    state: State.Open,
-    openIssues: 0,
-    closedIssues: 0,
-    dueOn: new Date('Mon, 21 Jan 2019 00:30:14 GMT'),
-    ...props,
-  };
-}
+import Status from '../Status';
+import { createMilestoneProps } from './MilestoneTestUtil';
 
 describe('Milestone', () => {
   const title = 'First milestone';
-  let props: any = createTestProps({ title });
+  let props: any = createMilestoneProps({ title });
   const wrapper = shallow(<Milestone {...props} />);
 
   it('should display the title of milestone', () => {
     expect(valueFromWrapper(wrapper, 'milestone-title')).toEqual(title);
   });
 
-  it('should have a TaskCounter component', () => {
+  it('should have a IssuesCounter component', () => {
     expect(wrapper.find(IssuesCounter).length).toBe(1);
   });
 
@@ -38,31 +28,31 @@ describe('Milestone', () => {
     expect(valueFromWrapper(wrapper, 'date')).toBe('Due on Sun Jan 20 2019');
   });
 
-  describe('with no closed tasks', () => {
+  describe('with no closed issues', () => {
     it('should calculate percentage as 0', () => {
-      props = createTestProps({});
+      props = createMilestoneProps({});
 
       const instance = getInstanceForWrapper(props);
-      expect(instance.taskCompletionPercent()).toBe(0);
+      expect(instance.issuesCompletionPercent()).toBe(0);
     });
   });
 
-  describe('with 50% closed tasks', () => {
+  describe('with 50% closed issues', () => {
     it('should calculate percentage as 50', () => {
-      props = createTestProps({
+      props = createMilestoneProps({
         openIssues: 1,
         closedIssues: 1,
       });
 
       const instance = getInstanceForWrapper(props);
-      expect(instance.taskCompletionPercent()).toBe(50);
+      expect(instance.issuesCompletionPercent()).toBe(50);
     });
   });
 });
 
 describe('Closed milestone', () => {
-  const props: any = createTestProps({
-    state: State.Closed,
+  const props: any = createMilestoneProps({
+    status: Status.Closed,
     closedAt: new Date('02/01/2020'),
   });
   const wrapper = shallow(<Milestone {...props} />);

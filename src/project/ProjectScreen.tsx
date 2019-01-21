@@ -6,6 +6,8 @@ import { View } from 'react-native';
 import { createAppContainer, createBottomTabNavigator } from 'react-navigation';
 import MilestonesScreen from './milestones/MilestonesScreen';
 import IssuesScreen from './IssuesScreen';
+import { createMilestoneProps } from './milestones/MilestoneTestUtil';
+import Status from './Status';
 
 export const TabNavigator = createAppContainer(
   createBottomTabNavigator({
@@ -26,18 +28,8 @@ export default class ProjectScreen extends React.Component {
   componentDidMount() {
     this.setState({
       milestones: [
-        {
-          name: 'test Open',
-          dueDate: '01/01/2020',
-          tasks: [{ closed: true }, { closed: false }],
-          closed: false,
-        },
-        {
-          name: 'test Closed',
-          dueDate: '01/01/2020',
-          tasks: [{ closed: true }, { closed: false }],
-          closed: true,
-        },
+        createMilestoneProps({}),
+        createMilestoneProps({status:Status.Closed}),
       ],
     });
   }
