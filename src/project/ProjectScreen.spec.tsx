@@ -25,7 +25,7 @@ describe('For Open/Closed button', () => {
   });
 });
 
-describe('RepositoryScreen', () => {
+describe(ProjectScreen.name, () => {
   const wrapper = shallow(<ProjectScreen />);
 
   it('should have a Filters component', () => {

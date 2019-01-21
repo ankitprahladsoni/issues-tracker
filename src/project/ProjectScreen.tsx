@@ -18,7 +18,7 @@ export const TabNavigator = createAppContainer(
 
 export default class ProjectScreen extends React.Component {
   static navigationOptions = {
-    title: 'Repository!!!',
+    title: 'Project!!!',
   };
   state = { status: Status.Open, milestones: [] };
 
