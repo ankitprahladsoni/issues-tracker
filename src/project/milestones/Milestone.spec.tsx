@@ -53,7 +53,7 @@ describe('Milestone', () => {
 describe('Closed milestone', () => {
   const props: any = createMilestoneProps({
     status: Status.Closed,
-    closedAt: new Date('02/01/2020'),
+    closedAt: new Date('Sat, 01 Feb 2020 05:00:00 GMT'),
   });
   const wrapper = shallow(<Milestone {...props} />);
 
