@@ -12,7 +12,7 @@ import Status from './Status';
 export const TabNavigator = createAppContainer(
   createBottomTabNavigator({
     Milestone: MilestonesScreen,
-    Stories: IssuesScreen,
+    Issues: IssuesScreen,
   })
 );
 
