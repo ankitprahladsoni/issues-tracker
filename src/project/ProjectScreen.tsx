@@ -29,7 +29,7 @@ export default class ProjectScreen extends React.Component {
     this.setState({
       milestones: [
         createMilestoneProps({}),
-        createMilestoneProps({ status: Status.Closed }),
+        createMilestoneProps({ status: Status.Closed, closedAt: new Date() }),
       ],
     });
   }

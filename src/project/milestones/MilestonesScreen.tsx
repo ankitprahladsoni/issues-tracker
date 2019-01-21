@@ -1,7 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import { NavigationScreenProps } from 'react-navigation';
-import Milestone, { IMilestoneProps } from 'src/project/milestones/Milestone';
+import Milestone, { IMilestoneProps } from './Milestone';
 
 export default class MilestonesScreen extends React.Component<
   NavigationScreenProps
