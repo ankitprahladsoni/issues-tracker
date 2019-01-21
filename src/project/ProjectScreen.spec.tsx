@@ -5,21 +5,22 @@ import { shallow } from 'enzyme';
 import React from 'react';
 import { propsForElementInsideWrapper } from 'testUtils/ElementUtils';
 import ProjectScreen, { TabNavigator } from './ProjectScreen';
+import Status from './Status';
 
 describe('For Open/Closed button', () => {
   const wrapper = shallow(<ProjectScreen />);
   const openClose = wrapper.find(OpenClose).shallow();
 
   describe.each`
-    button      | buttonId           | shouldShowOpen
-    ${'Open'}   | ${'open-button'}   | ${true}
-    ${'Closed'} | ${'closed-button'} | ${false}
-  `('When $button button is pressed', ({ buttonId, shouldShowOpen }) => {
-    it('should pass screenProps.shouldShowOpen as $shouldShowOpen', () => {
+    button      | buttonId           | status
+    ${'Open'}   | ${'open-button'}   | ${Status.Open}
+    ${'Closed'} | ${'closed-button'} | ${Status.Closed}
+  `('When $button button is pressed', ({ buttonId, status }) => {
+    it('should pass screenProps.status as $status', () => {
       propsForElementInsideWrapper(openClose, buttonId).onPress();
       const screenProps = wrapper.find(TabNavigator).props().screenProps;
 
-      expect(screenProps.shouldShowOpen).toBe(shouldShowOpen);
+      expect(screenProps.status).toBe(status);
     });
   });
 });

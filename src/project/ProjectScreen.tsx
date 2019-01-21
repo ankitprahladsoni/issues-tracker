@@ -20,16 +20,16 @@ export default class ProjectScreen extends React.Component {
   static navigationOptions = {
     title: 'Repository!!!',
   };
-  state = { shouldShowOpen: true, milestones: [] };
+  state = { status: Status.Open, milestones: [] };
 
-  showOpen = () => this.setState({ shouldShowOpen: true });
-  showClosed = () => this.setState({ shouldShowOpen: false });
+  showOpen = () => this.setState({ status: Status.Open });
+  showClosed = () => this.setState({ status: Status.Closed });
 
   componentDidMount() {
     this.setState({
       milestones: [
         createMilestoneProps({}),
-        createMilestoneProps({status:Status.Closed}),
+        createMilestoneProps({ status: Status.Closed }),
       ],
     });
   }
@@ -42,7 +42,7 @@ export default class ProjectScreen extends React.Component {
         <AddButton type="milestone" />
         <TabNavigator
           screenProps={{
-            shouldShowOpen: this.state.shouldShowOpen,
+            status: this.state.status,
             milestones: this.state.milestones,
           }}
         />
