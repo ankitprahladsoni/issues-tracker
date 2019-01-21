@@ -4,18 +4,21 @@ import { TouchableOpacity } from 'react-native';
 import Milestone from 'src/project/milestones/Milestone';
 import { propsForElementInsideWrapper } from 'testUtils/ElementUtils';
 import MilestonesScreen from './MilestonesScreen';
+import State from '../State';
 
 const openMilestone = {
-  name: 'test Open',
   dueDate: '01/01/2020',
-  tasks: [{ closed: true }, { closed: false }],
-  closed: false,
+  state: State.Open,
+  openIssues: 0,
+  closedIssues: 0,
+  dueOn: new Date('Mon, 21 Jan 2019 00:30:14 GMT'),
 };
 const closedMilestone = {
-  name: 'test Closed',
   dueDate: '01/01/2020',
-  tasks: [{ closed: true }, { closed: false }],
-  closed: true,
+  state: State.Closed,
+  openIssues: 0,
+  closedIssues: 0,
+  dueOn: new Date('Mon, 21 Jan 2019 00:30:14 GMT'),
 };
 const navigateFn = jest.fn();
 function createTestProps<T>(otherProps: T) {
@@ -25,7 +28,7 @@ function createTestProps<T>(otherProps: T) {
     },
     screenProps: {
       milestones: [openMilestone, closedMilestone],
-      shouldShowOpen: true,
+      state: State.Open,
     },
     ...otherProps,
   };
@@ -41,27 +44,24 @@ it("should display it's tasks when clicked on it", () => {
 
 describe('MilestonesScreen', () => {
   describe.each`
-    shouldShowOpen | milestoneProps
-    ${true}        | ${openMilestone}
-    ${false}       | ${closedMilestone}
-  `(
-    'When having screenProp shouldShowOpen: $shouldShowOpen',
-    ({ shouldShowOpen, milestoneProps }) => {
-      it('should only display milestones with props $milestoneProps', () => {
-        const props: any = createTestProps({});
-        props.screenProps.shouldShowOpen = shouldShowOpen;
-        const wrapper = shallow(<MilestonesScreen {...props} />);
+    state           | milestoneProps
+    ${State.Open}   | ${openMilestone}
+    ${State.Closed} | ${closedMilestone}
+  `('When having screenProp state: $state', ({ state, milestoneProps }) => {
+    it('should only display milestones with props $milestoneProps', () => {
+      const props: any = createTestProps({});
+      props.screenProps.state = state;
+      const wrapper = shallow(<MilestonesScreen {...props} />);
 
-        const touchableOpacityWrapper = wrapper.find(TouchableOpacity);
-        expect(touchableOpacityWrapper.length).toBe(1);
+      const touchableOpacityWrapper = wrapper.find(TouchableOpacity);
+      expect(touchableOpacityWrapper.length).toBe(1);
 
-        expect(
-          touchableOpacityWrapper
-            .first()
-            .shallow()
-            .containsMatchingElement(<Milestone {...milestoneProps} />)
-        ).toBeTruthy();
-      });
-    }
-  );
+      expect(
+        touchableOpacityWrapper
+          .first()
+          .shallow()
+          .containsMatchingElement(<Milestone {...milestoneProps} />)
+      ).toBeTruthy();
+    });
+  });
 });

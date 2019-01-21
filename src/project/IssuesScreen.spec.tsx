@@ -11,5 +11,5 @@ it('has a text Bugs!', () => {
       .find(Text)
       .render()
       .text()
-  ).toEqual('Stories!');
+  ).toEqual('Issues!');
 });
