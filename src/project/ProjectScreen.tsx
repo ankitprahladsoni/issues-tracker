@@ -4,42 +4,32 @@ import OpenClose from 'components/OpenClose';
 import React from 'react';
 import { View } from 'react-native';
 import { createAppContainer, createBottomTabNavigator } from 'react-navigation';
-import BugsScreen from './BugsScreen';
-import MilestonesScreen from './MilestonesScreen';
-import StoriesScreen from './StoriesScreen';
+import IssuesScreen from './IssuesScreen';
+import MilestonesScreen from './milestones/MilestonesScreen';
+import { createMilestoneProps } from './milestones/MilestoneTestUtil';
+import Status from './Status';
 
 export const TabNavigator = createAppContainer(
   createBottomTabNavigator({
     Milestone: MilestonesScreen,
-    Stories: StoriesScreen,
-    Bugs: BugsScreen,
+    Issues: IssuesScreen,
   })
 );
 
-export default class RepositoryScreen extends React.Component {
+export default class ProjectScreen extends React.Component {
   static navigationOptions = {
-    title: 'Repository!!!',
+    title: 'Project!!!',
   };
-  state = { shouldShowOpen: true, milestones: [] };
+  state = { status: Status.Open, milestones: [] };
 
-  showOpen = () => this.setState({ shouldShowOpen: true });
-  showClosed = () => this.setState({ shouldShowOpen: false });
+  showOpen = () => this.setState({ status: Status.Open });
+  showClosed = () => this.setState({ status: Status.Closed });
 
   componentDidMount() {
     this.setState({
       milestones: [
-        {
-          name: 'test Open',
-          dueDate: '01/01/2020',
-          tasks: [{ closed: true }, { closed: false }],
-          closed: false,
-        },
-        {
-          name: 'test Closed',
-          dueDate: '01/01/2020',
-          tasks: [{ closed: true }, { closed: false }],
-          closed: true,
-        },
+        createMilestoneProps({}),
+        createMilestoneProps({ status: Status.Closed, closedAt: new Date() }),
       ],
     });
   }
@@ -52,7 +42,7 @@ export default class RepositoryScreen extends React.Component {
         <AddButton type="milestone" />
         <TabNavigator
           screenProps={{
-            shouldShowOpen: this.state.shouldShowOpen,
+            status: this.state.status,
             milestones: this.state.milestones,
           }}
         />

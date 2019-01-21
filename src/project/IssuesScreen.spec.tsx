@@ -1,15 +1,15 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 import { Text } from 'react-native';
-import BugsScreen from './BugsScreen';
+import IssuesScreen from './IssuesScreen';
 
 it('has a text Bugs!', () => {
-  const wrapper = shallow(<BugsScreen />);
+  const wrapper = shallow(<IssuesScreen />);
 
   expect(
     wrapper
       .find(Text)
       .render()
       .text()
-  ).toEqual('Bugs!');
+  ).toEqual('Issues!');
 });

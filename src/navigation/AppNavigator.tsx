@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
-import RepositoryScreen from '../screens/RepositoryScreen';
+import ProjectScreen from '../project/ProjectScreen';
 
 class DetailsScreen extends React.Component {
   render() {
@@ -14,8 +14,8 @@ class DetailsScreen extends React.Component {
 }
 export default createStackNavigator(
   {
+    Home: ProjectScreen,
     Details: DetailsScreen,
-    Home: RepositoryScreen,
   },
   {
     initialRouteName: 'Home',
