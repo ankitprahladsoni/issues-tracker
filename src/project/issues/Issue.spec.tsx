@@ -4,7 +4,7 @@ import Issue from './Issue';
 import { createIssueProps } from './IssuesTestUtil';
 import { valueFromWrapper } from 'testUtils/ElementUtils';
 import CheckListCounter from './CheckListCounter';
-import IssueIcon from './IssueIcon';
+import IssueIcon from './issueIcon/IssueIcon';
 import Lables from './Lables';
 import StatusIndicator from './StatusIndicator';
 
