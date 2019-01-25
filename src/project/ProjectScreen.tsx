@@ -4,7 +4,7 @@ import OpenClose from 'components/OpenClose';
 import React from 'react';
 import { View } from 'react-native';
 import { createAppContainer, createBottomTabNavigator } from 'react-navigation';
-import IssuesScreen from './IssuesScreen';
+import IssuesScreen from './issues/IssuesScreen';
 import MilestonesScreen from './milestones/MilestonesScreen';
 import { createMilestoneProps } from './milestones/MilestoneTestUtil';
 import Status from './Status';
