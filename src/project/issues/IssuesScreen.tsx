@@ -1,12 +1,7 @@
 import React from 'react';
 import { View, TouchableOpacity } from 'react-native';
 import { NavigationScreenProps } from 'react-navigation';
-import Issue from './Issue';
-import Status from '../Status';
-
-export interface IIssuesScreenProps {
-  status: Status;
-}
+import Issue, { IIssueProps } from './Issue';
 
 export default class IssuesScreen extends React.Component<
   NavigationScreenProps
@@ -15,7 +10,7 @@ export default class IssuesScreen extends React.Component<
     this.props.navigation.navigate('Issue', { name: 'Issue 1' });
 
   render() {
-    const issues: IIssuesScreenProps[] = this.props.screenProps!.issues;
+    const issues: IIssueProps[] = this.props.screenProps!.issues;
 
     const issueComponents = issues
       .filter(m => m.status === this.props.screenProps!.status)

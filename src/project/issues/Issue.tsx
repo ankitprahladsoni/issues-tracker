@@ -4,14 +4,16 @@ import CheckListCounter from 'src/project/issues/CheckListCounter';
 import IssueIcon from './IssueIcon';
 import Lables from './Lables';
 import StatusIndicator from './StatusIndicator';
+import Status from '../Status';
 
-type IssueProps = {
+export interface IIssueProps {
   title: string;
   assignee?: string;
   milestone: string;
-};
+  status: Status;
+}
 
-export default class Issue extends React.Component<IssueProps> {
+export default class Issue extends React.Component<IIssueProps> {
   render() {
     const assignee = `Assigned to ${this.props.assignee}`;
     return (
