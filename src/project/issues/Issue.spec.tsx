@@ -6,7 +6,7 @@ import { valueFromWrapper } from 'testUtils/ElementUtils';
 import CheckListCounter from './CheckListCounter';
 import IssueIcon from './issueIcon/IssueIcon';
 import Lables from './Lables';
-import StatusIndicator from './StatusIndicator';
+import StatusIndicator from './statusIndicator/StatusIndicator';
 
 const title = 'First task';
 const assignee = 'Assignee 1';
