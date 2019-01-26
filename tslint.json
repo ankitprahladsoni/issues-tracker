@@ -24,6 +24,7 @@
     ],
     "no-unused-variable": true,
     "semicolon": [true, "always", "ignore-bound-class-methods"],
-    "object-literal-sort-keys": false
+    "object-literal-sort-keys": false,
+    "interface-name": [true, "never-prefix"]
   }
 }
