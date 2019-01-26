@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import Issue from './Issue';
 import { createIssueProps } from './IssuesTestUtil';
 import { valueFromWrapper } from 'testUtils/ElementUtils';
-import CheckListCounter from './CheckListCounter';
+import TaskListCounter from './checkListCounter/TaskListCounter';
 import IssueIcon from './issueIcon/IssueIcon';
 import Lables from './Lables';
 import StatusIndicator from './statusIndicator/StatusIndicator';
@@ -18,7 +18,7 @@ it('should have a title', () => {
   expect(valueFromWrapper(wrapper, 'title')).toBe(title);
 });
 it('should have a Checklist component', () => {
-  expect(wrapper.find(CheckListCounter).length).toBe(1);
+  expect(wrapper.find(TaskListCounter).length).toBe(1);
 });
 it('should have a Icon component', () => {
   expect(wrapper.find(IssueIcon).length).toBe(1);
