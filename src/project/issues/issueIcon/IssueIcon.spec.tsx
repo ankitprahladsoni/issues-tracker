@@ -6,7 +6,7 @@ import { propsForElementInsideWrapper } from 'testUtils/ElementUtils';
 
 it.each`
   issueType         | icon
-  ${IssueType.Task} | ${'task'}
+  ${IssueType.Task} | ${'tasks'}
   ${IssueType.Bug}  | ${'bug'}
 `(
   'should have $icon icon when the issue type is $issueType',

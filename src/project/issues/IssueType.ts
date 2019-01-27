@@ -1,5 +1,5 @@
 enum IssueType {
-  Task = 'task',
+  Task = 'tasks',
   Bug = 'bug',
 }
 
