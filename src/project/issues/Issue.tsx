@@ -8,7 +8,7 @@ import Status from '../Status';
 import IssueType from './IssueType';
 import Task from './Task';
 
-export interface IIssueProps {
+export interface IssueProps {
   title: string;
   assignee?: string;
   milestone: string;
@@ -17,7 +17,7 @@ export interface IIssueProps {
   tasks: Task[];
 }
 
-export default class Issue extends React.Component<IIssueProps> {
+export default class Issue extends React.Component<IssueProps> {
   render() {
     const assignee = `Assigned to ${this.props.assignee}`;
     return (

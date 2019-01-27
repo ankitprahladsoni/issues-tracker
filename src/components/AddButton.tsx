@@ -1,11 +1,11 @@
 import React from 'react';
 import { Button, Modal, Text, TouchableHighlight, View } from 'react-native';
 
-export interface IAddButtonProps {
+export interface AddButtonProps {
   type: string;
 }
 
-export default class AddButton extends React.Component<IAddButtonProps> {
+export default class AddButton extends React.Component<AddButtonProps> {
   state = {
     modalVisible: false,
   };

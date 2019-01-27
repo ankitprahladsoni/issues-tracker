@@ -1,11 +1,11 @@
 import React from 'react';
 import { Button, Modal, Text, TouchableHighlight, View } from 'react-native';
 
-export interface IFiltersProps {
+export interface FiltersProps {
   type: string;
 }
 
-export default class Filters extends React.Component<IFiltersProps> {
+export default class Filters extends React.Component<FiltersProps> {
   state = {
     modalVisible: false,
   };

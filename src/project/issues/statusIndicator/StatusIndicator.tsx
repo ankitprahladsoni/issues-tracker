@@ -2,11 +2,13 @@ import React from 'react';
 import { View } from 'react-native';
 import Status from 'src/project/Status';
 
-export interface IStatusIndicatorProps {
+export interface StatusIndicatorProps {
   status: Status;
 }
 
-export default class StatusIndicator extends React.Component<IStatusIndicatorProps> {
+export default class StatusIndicator extends React.Component<
+  StatusIndicatorProps
+> {
   getColor = (status: Status) => {
     switch (status) {
       case Status.Open:

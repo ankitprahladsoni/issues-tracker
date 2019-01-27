@@ -6,8 +6,8 @@ import { Text } from 'react-native';
 import { valueFromWrapper } from 'testUtils/ElementUtils';
 import Task from '../Task';
 
-const tasks_0_2: Task[] = [{ checked: false }, { checked: false }];
-const tasks_1_2: Task[] = [{ checked: false }, { checked: true }];
+const tasks02: Task[] = [{ checked: false }, { checked: false }];
+const tasks12: Task[] = [{ checked: false }, { checked: true }];
 
 it('should not display counter if there are no items in the taskList', () => {
   const wrapper = shallow(<TaskListCounter tasks={[]} />);
@@ -15,14 +15,14 @@ it('should not display counter if there are no items in the taskList', () => {
 });
 
 it('should have a tasklist icon if are items in the taskList', () => {
-  const wrapper = shallow(<TaskListCounter tasks={tasks_0_2} />);
+  const wrapper = shallow(<TaskListCounter tasks={tasks02} />);
   expect(wrapper.find(Octicons).length).toBe(1);
 });
 
 it.each`
   tasks        | counter
-  ${tasks_0_2} | ${'0/2'}
-  ${tasks_1_2} | ${'1/2'}
+  ${tasks02} | ${'0/2'}
+  ${tasks12} | ${'1/2'}
 `(
   'should display counter as $counter for tasks $tasks',
   ({ tasks, counter }) => {

@@ -3,12 +3,12 @@ import { Text, View } from 'react-native';
 import { Octicons } from '@expo/vector-icons';
 import Task from '../Task';
 
-export interface ITaskListCounterProps {
+export interface TaskListCounterProps {
   tasks: Task[];
 }
 
 export default class TaskListCounter extends React.Component<
-  ITaskListCounterProps
+  TaskListCounterProps
 > {
   render() {
     const tasks: Task[] = this.props.tasks;

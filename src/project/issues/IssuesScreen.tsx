@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, TouchableOpacity } from 'react-native';
 import { NavigationScreenProps } from 'react-navigation';
-import Issue, { IIssueProps } from './Issue';
+import Issue, { IssueProps } from './Issue';
 import IssueType from './IssueType';
 import Status from '../Status';
 
@@ -12,7 +12,7 @@ export default class IssuesScreen extends React.Component<
     this.props.navigation.navigate('Issue', { name: 'Issue 1' });
 
   render() {
-    const issues: IIssueProps[] = [
+    const issues: IssueProps[] = [
       {
         title: 'Task1',
         status: Status.Open,

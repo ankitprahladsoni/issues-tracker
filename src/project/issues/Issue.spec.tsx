@@ -11,7 +11,7 @@ import StatusIndicator from './statusIndicator/StatusIndicator';
 const title = 'First task';
 const assignee = 'Assignee 1';
 const milestone = 'Milestone 1';
-let props: any = createIssueProps({ title, assignee, milestone });
+const props: any = createIssueProps({ title, assignee, milestone });
 const wrapper = shallow(<Issue {...props} />);
 
 it('should have a title', () => {

@@ -3,11 +3,11 @@ import React from 'react';
 import { FontAwesome } from '@expo/vector-icons';
 import IssueType from '../IssueType';
 
-interface IIssueIconProps {
+interface IssueIconProps {
   issueType: IssueType;
 }
 
-export default class IssueIcon extends React.Component<IIssueIconProps> {
+export default class IssueIcon extends React.Component<IssueIconProps> {
   render() {
     return (
       <View>
