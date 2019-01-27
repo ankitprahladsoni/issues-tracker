@@ -1,7 +1,6 @@
 {
   "extends": "tslint-config-airbnb",
   "rules": {
-    "prefer-array-literal": [true, { "allow-type-parameters": true }],
     "variable-name": [
       true,
       "ban-keywords",
@@ -13,7 +12,6 @@
       true,
       { "react": "React", "reactTestRenderer": "renderer" }
     ],
-    "member-access": [true, "no-public"],
     "trailing-comma": [
       true,
       {
@@ -22,9 +20,6 @@
         }
       }
     ],
-    "no-unused-variable": true,
-    "semicolon": [true, "always", "ignore-bound-class-methods"],
-    "object-literal-sort-keys": false,
-    "interface-name": [true, "never-prefix"]
+    "semicolon": [true, "always", "ignore-bound-class-methods"]
   }
 }
