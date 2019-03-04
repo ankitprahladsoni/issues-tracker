@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 import { Octicons } from '@expo/vector-icons';
 import Task from '../Task';
 
@@ -19,10 +19,14 @@ export default class TaskListCounter extends React.Component<
     const checked = tasks.filter(t => t.checked).length;
     const counter = `${checked}/${tasks.length}`;
     return (
-      <View>
-        <Octicons name="tasklist" />
-        <Text testID="counter">{counter}</Text>
+      <View style={styles.view}>
+        <Octicons name="tasklist" style={{paddingRight:5}}/>
+        <Text testID="counter">{counter} tasks completed</Text>
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  view: { flexDirection: 'row', alignItems: 'center' ,},
+});

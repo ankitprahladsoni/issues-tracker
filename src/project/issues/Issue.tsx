@@ -1,12 +1,22 @@
 import React from 'react';
-import { Text, View } from 'react-native';
 import TaskListCounter from './checkListCounter/TaskListCounter';
 import IssueIcon from './issueIcon/IssueIcon';
 import Lables from './Lables';
-import StatusIndicator from './statusIndicator/StatusIndicator';
+import { getColor } from './statusIndicator/StatusIndicator';
 import Status from '../Status';
 import IssueType from './IssueType';
 import Task from './Task';
+import {
+  Container,
+  Content,
+  Card,
+  CardItem,
+  Body,
+  Text,
+  Right,
+  View,
+  Left,
+} from 'native-base';
 
 export interface IssueProps {
   title: string;
@@ -21,15 +31,50 @@ export default class Issue extends React.Component<IssueProps> {
   render() {
     const assignee = `Assigned to ${this.props.assignee}`;
     return (
-      <View>
-        <Text testID="title">{this.props.title}</Text>
-        <TaskListCounter tasks={this.props.tasks} />
-        <IssueIcon issueType={this.props.issueType} />
-        <Text testID="assignee">{assignee}</Text>
-        <Text testID="milestone">{this.props.milestone}</Text>
-        <StatusIndicator status={this.props.status} />
-        <Lables />
-      </View>
+      <Container>
+        <Content>
+          <Card>
+            <CardItem
+              style={{
+                borderLeftColor: getColor(this.props.status),
+                borderLeftWidth: 5,
+                paddingRight: 5,
+                paddingLeft: 5,
+                paddingTop: 5,
+                paddingBottom: 5,
+              }}
+            >
+              <Left>
+                <View>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      alignItems: 'center',
+                      paddingBottom: 5,
+                    }}
+                  >
+                    <IssueIcon issueType={this.props.issueType} />
+                    <Text testID="title" style={{ fontSize: 25 }}>
+                      {this.props.title}
+                    </Text>
+                  </View>
+                  <View style={{ flexDirection: 'row' }}>
+                    <TaskListCounter tasks={this.props.tasks} />
+                    <Lables />
+                  </View>
+                </View>
+              </Left>
+
+              <View>
+                <View style={{ alignItems: 'flex-end' }}>
+                  <Text testID="assignee">{assignee}</Text>
+                  <Text testID="milestone">{this.props.milestone}</Text>
+                </View>
+              </View>
+            </CardItem>
+          </Card>
+        </Content>
+      </Container>
     );
   }
 }

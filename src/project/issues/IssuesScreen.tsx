@@ -16,31 +16,33 @@ export default class IssuesScreen extends React.Component<
       {
         title: 'Task1',
         status: Status.Open,
-        milestone: 'None',
+        milestone: 'No Milestone',
         issueType: IssueType.Task,
         tasks: [{ checked: false }],
+        assignee: 'Ankit',
       },
       {
         title: 'Task2',
         status: Status.Closed,
-        milestone: 'None',
+        milestone: 'No Milestone',
         issueType: IssueType.Bug,
         tasks: [{ checked: false }],
-      }
+        assignee: 'Ankit',
+      },
     ];
 
     const issueComponents = issues
       .filter(m => m.status === this.props.screenProps!.status)
       .map((m, index) => (
-        <TouchableOpacity
-          onPress={this.navigateTo}
-          testID={`issue${index}`}
-          key={index}
-        >
-          <Issue {...m} />
-        </TouchableOpacity>
+        // <TouchableOpacity
+        //   onPress={this.navigateTo}
+        //   testID={`issue${index}`}
+        //   key={index}
+        // >
+        <Issue {...m} key={index} />
+        // </TouchableOpacity>
       ));
 
-    return <View>{issueComponents}</View>;
+    return <View style={{ flex: 1 }}>{issueComponents}</View>;
   }
 }

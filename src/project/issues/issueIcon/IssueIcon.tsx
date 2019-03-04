@@ -11,7 +11,7 @@ export default class IssueIcon extends React.Component<IssueIconProps> {
   render() {
     return (
       <View>
-        <FontAwesome testID="issue-icon" name={this.props.issueType} />
+        <FontAwesome testID="issue-icon" name={this.props.issueType} style={{paddingRight:5}} size={20}/>
       </View>
     );
   }

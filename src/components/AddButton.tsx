@@ -20,6 +20,7 @@ export default class AddButton extends React.Component<AddButtonProps> {
           animationType="slide"
           transparent={false}
           visible={this.state.modalVisible}
+          onRequestClose={() => {}}
         >
           <View>
             <Text>Add stuff here</Text>

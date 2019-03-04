@@ -21,6 +21,7 @@ export default class Filters extends React.Component<FiltersProps> {
           animationType="slide"
           transparent={false}
           visible={this.state.modalVisible}
+          onRequestClose={() => {}}
         >
           <View>
             <Text>filters</Text>
