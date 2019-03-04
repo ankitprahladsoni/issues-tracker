@@ -1,7 +1,6 @@
 import React from 'react';
 import TaskListCounter from './checkListCounter/TaskListCounter';
 import IssueIcon from './issueIcon/IssueIcon';
-import Lables from './Lables';
 import { getColor } from './statusIndicator/StatusIndicator';
 import Status from '../Status';
 import IssueType from './IssueType';
@@ -11,9 +10,7 @@ import {
   Content,
   Card,
   CardItem,
-  Body,
   Text,
-  Right,
   View,
   Left,
 } from 'native-base';
@@ -60,7 +57,6 @@ export default class Issue extends React.Component<IssueProps> {
                   </View>
                   <View style={{ flexDirection: 'row' }}>
                     <TaskListCounter tasks={this.props.tasks} />
-                    <Lables />
                   </View>
                 </View>
               </Left>
