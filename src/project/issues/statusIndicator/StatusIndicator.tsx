@@ -9,7 +9,6 @@ export interface StatusIndicatorProps {
 export default class StatusIndicator extends React.Component<
   StatusIndicatorProps
 > {
- 
   render() {
     return (
       <View
@@ -23,7 +22,7 @@ export default class StatusIndicator extends React.Component<
   }
 }
 
- export const getColor = (status: Status) => {
+export const getColor = (status: Status) => {
   switch (status) {
     case Status.Open:
       return 'red';

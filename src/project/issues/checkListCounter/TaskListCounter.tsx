@@ -20,7 +20,7 @@ export default class TaskListCounter extends React.Component<
     const counter = `${checked}/${tasks.length}`;
     return (
       <View style={styles.view}>
-        <Octicons name="tasklist" style={{paddingRight:5}}/>
+        <Octicons name="tasklist" style={{ paddingRight: 5 }} />
         <Text testID="counter">{counter} tasks completed</Text>
       </View>
     );
@@ -28,5 +28,5 @@ export default class TaskListCounter extends React.Component<
 }
 
 const styles = StyleSheet.create({
-  view: { flexDirection: 'row', alignItems: 'center' ,},
+  view: { flexDirection: 'row', alignItems: 'center' },
 });
