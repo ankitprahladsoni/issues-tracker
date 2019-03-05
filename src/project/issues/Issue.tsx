@@ -24,53 +24,58 @@ export interface IssueProps {
   tasks: Task[];
 }
 
-export default class Issue extends React.Component<IssueProps> {
-  render() {
-    const assignee = `Assigned to ${this.props.assignee}`;
-    return (
-      <Container>
-        <Content>
-          <Card>
-            <CardItem
-              style={{
-                borderLeftColor: getStatusColor(this.props.status),
-                borderLeftWidth: 5,
-                paddingRight: 5,
-                paddingLeft: 5,
-                paddingTop: 5,
-                paddingBottom: 5,
-              }}
-            >
-              <Left>
-                <View>
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      alignItems: 'center',
-                      paddingBottom: 5,
-                    }}
-                  >
-                    <IssueIcon issueType={this.props.issueType} />
-                    <Text testID="title" style={{ fontSize: 25 }}>
-                      {this.props.title}
-                    </Text>
-                  </View>
-                  <View style={{ flexDirection: 'row' }}>
-                    <TaskListCounter tasks={this.props.tasks} />
-                  </View>
-                </View>
-              </Left>
-
+export default ({
+  title,
+  assignee,
+  milestone,
+  status,
+  issueType,
+  tasks,
+}: IssueProps) => {
+  const assignedTo = `Assigned to ${assignee}`;
+  return (
+    <Container>
+      <Content>
+        <Card>
+          <CardItem
+            style={{
+              borderLeftColor: getStatusColor(status),
+              borderLeftWidth: 5,
+              paddingRight: 5,
+              paddingLeft: 5,
+              paddingTop: 5,
+              paddingBottom: 5,
+            }}
+          >
+            <Left>
               <View>
-                <View style={{ alignItems: 'flex-end' }}>
-                  <Text testID="assignee">{assignee}</Text>
-                  <Text testID="milestone">{this.props.milestone}</Text>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    paddingBottom: 5,
+                  }}
+                >
+                  <IssueIcon issueType={issueType} />
+                  <Text testID="title" style={{ fontSize: 25 }}>
+                    {title}
+                  </Text>
+                </View>
+                <View style={{ flexDirection: 'row' }}>
+                  <TaskListCounter tasks={tasks} />
                 </View>
               </View>
-            </CardItem>
-          </Card>
-        </Content>
-      </Container>
-    );
-  }
-}
+            </Left>
+
+            <View>
+              <View style={{ alignItems: 'flex-end' }}>
+                <Text testID="assignedTo">{assignedTo}</Text>
+                <Text testID="milestone">{milestone}</Text>
+              </View>
+            </View>
+          </CardItem>
+        </Card>
+      </Content>
+    </Container>
+  );
+};

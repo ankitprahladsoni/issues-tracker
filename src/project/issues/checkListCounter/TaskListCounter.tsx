@@ -8,18 +8,18 @@ interface TaskListCounterProps {
 }
 
 export default ({ tasks }: TaskListCounterProps) => {
-    if (tasks.length === 0) {
+  if (tasks.length === 0) {
     return null;
-    }
+  }
 
-    const checked = tasks.filter(t => t.checked).length;
-    const counterText = `${checked}/${tasks.length} tasks completed`;
-    return (
-      <View style={styles.view}>
+  const checked = tasks.filter(t => t.checked).length;
+  const counterText = `${checked}/${tasks.length} tasks completed`;
+  return (
+    <View style={styles.view}>
       <Octicons name="tasklist" style={styles.icon} />
-        <Text testID="counterText">{counterText}</Text>
-      </View>
-    );
+      <Text testID="counterText">{counterText}</Text>
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({

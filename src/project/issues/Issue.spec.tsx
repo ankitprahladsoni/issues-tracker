@@ -22,7 +22,7 @@ it('should have a Icon component', () => {
   expect(wrapper.find(IssueIcon).length).toBe(1);
 });
 it('should have Assignee', () => {
-  expect(valueFromWrapper(wrapper, 'assignee')).toBe(`Assigned to ${assignee}`);
+  expect(valueFromWrapper(wrapper, 'assignedTo')).toBe(`Assigned to ${assignee}`);
 });
 it('should have a milestone name', () => {
   expect(valueFromWrapper(wrapper, 'milestone')).toBe(milestone);
