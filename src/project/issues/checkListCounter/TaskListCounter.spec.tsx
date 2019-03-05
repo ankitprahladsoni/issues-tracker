@@ -20,13 +20,13 @@ it('should have a tasklist icon if are items in the taskList', () => {
 });
 
 it.each`
-  tasks        | counter
-  ${tasks02} | ${'0/2'}
-  ${tasks12} | ${'1/2'}
+  tasks      | counter
+  ${tasks02} | ${'0/2 tasks completed'}
+  ${tasks12} | ${'1/2 tasks completed'}
 `(
   'should display counter as $counter for tasks $tasks',
   ({ tasks, counter }) => {
     const wrapper = shallow(<TaskListCounter tasks={tasks} />);
-    expect(valueFromWrapper(wrapper, 'counter')).toBe(counter);
+    expect(valueFromWrapper(wrapper, 'counterText')).toBe(counter);
   }
 );

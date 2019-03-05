@@ -1,7 +1,7 @@
 import React from 'react';
 import TaskListCounter from './checkListCounter/TaskListCounter';
 import IssueIcon from './issueIcon/IssueIcon';
-import { getColor } from './statusIndicator/StatusIndicator';
+import { getStatusColor } from './statusIndicator/StatusIndicator';
 import Status from '../Status';
 import IssueType from './IssueType';
 import Task from './Task';
@@ -33,7 +33,7 @@ export default class Issue extends React.Component<IssueProps> {
           <Card>
             <CardItem
               style={{
-                borderLeftColor: getColor(this.props.status),
+                borderLeftColor: getStatusColor(this.props.status),
                 borderLeftWidth: 5,
                 paddingRight: 5,
                 paddingLeft: 5,

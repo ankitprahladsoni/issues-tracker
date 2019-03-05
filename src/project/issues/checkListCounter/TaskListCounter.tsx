@@ -17,11 +17,11 @@ export default class TaskListCounter extends React.Component<
     }
 
     const checked = tasks.filter(t => t.checked).length;
-    const counter = `${checked}/${tasks.length}`;
+    const counterText = `${checked}/${tasks.length} tasks completed`;
     return (
       <View style={styles.view}>
         <Octicons name="tasklist" style={{ paddingRight: 5 }} />
-        <Text testID="counter">{counter} tasks completed</Text>
+        <Text testID="counterText">{counterText}</Text>
       </View>
     );
   }

@@ -33,15 +33,7 @@ export default class IssuesScreen extends React.Component<
 
     const issueComponents = issues
       .filter(m => m.status === this.props.screenProps!.status)
-      .map((m, index) => (
-        // <TouchableOpacity
-        //   onPress={this.navigateTo}
-        //   testID={`issue${index}`}
-        //   key={index}
-        // >
-        <Issue {...m} key={index} />
-        // </TouchableOpacity>
-      ));
+      .map((m, index) => <Issue {...m} key={index} />);
 
     return <View style={{ flex: 1 }}>{issueComponents}</View>;
   }
