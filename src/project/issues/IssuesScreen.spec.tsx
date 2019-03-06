@@ -3,7 +3,7 @@ import React from 'react';
 import IssuesScreen from './IssuesScreen';
 import Status from '../Status';
 import { createIssueProps } from './IssuesTestUtil';
-import Issue from './Issue';
+import IssueCard from './IssueCard';
 
 const openIssue = createIssueProps({});
 const closedIssue = createIssueProps({ status: Status.Closed });
@@ -29,7 +29,7 @@ describe('IssuesScreen', () => {
       props.screenProps.status = status;
       const wrapper = shallow(<IssuesScreen {...props} />);
 
-      const touchableOpacityWrapper = wrapper.find(Issue);
+      const touchableOpacityWrapper = wrapper.find(IssueCard);
       expect(touchableOpacityWrapper.length).toBe(1);
     });
   });

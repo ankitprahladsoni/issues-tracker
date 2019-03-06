@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Modal, Text, TouchableHighlight, View } from 'react-native';
+import Issue from 'src/project/issues/Issue';
 
 export interface AddButtonProps {
   type: string;
@@ -22,8 +23,8 @@ export default class AddButton extends React.Component<AddButtonProps> {
           visible={this.state.modalVisible}
           onRequestClose={() => {}}
         >
-          <View>
-            <Text>Add stuff here</Text>
+          <View style={{ flex: 1 }}>
+            <Issue />
             <TouchableHighlight
               testID="close"
               onPress={() => this.setModalVisible(!this.state.modalVisible)}

@@ -1,80 +1,70 @@
 import React from 'react';
-import TaskListCounter from './checkListCounter/TaskListCounter';
-import IssueIcon from './issueIcon/IssueIcon';
-import { getStatusColor } from './statusIndicator/StatusIndicator';
-import Status from '../Status';
-import IssueType from './IssueType';
-import Task from './Task';
 import {
   Container,
   Content,
-  Card,
-  CardItem,
+  Form,
+  Item,
+  Label,
+  Input,
+  Textarea,
+  CheckBox,
+  Body,
   Text,
-  View,
-  Left,
+  Picker,
+  Icon,
+  Button,
 } from 'native-base';
 
-export interface IssueProps {
-  title: string;
-  assignee?: string;
-  milestone: string;
-  status: Status;
-  issueType: IssueType;
-  tasks: Task[];
-}
-
-export default ({
-  title,
-  assignee,
-  milestone,
-  status,
-  issueType,
-  tasks,
-}: IssueProps) => {
-  const assignedTo = `Assigned to ${assignee}`;
+export default () => {
   return (
     <Container>
       <Content>
-        <Card>
-          <CardItem
-            style={{
-              borderLeftColor: getStatusColor(status),
-              borderLeftWidth: 5,
-              paddingRight: 5,
-              paddingLeft: 5,
-              paddingTop: 5,
-              paddingBottom: 5,
-            }}
-          >
-            <Left>
-              <View>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                    paddingBottom: 5,
-                  }}
-                >
-                  <IssueIcon issueType={issueType} />
-                  <Text testID="title" style={{ fontSize: 25 }}>
-                    {title}
-                  </Text>
-                </View>
-                <View style={{ flexDirection: 'row' }}>
-                  <TaskListCounter tasks={tasks} />
-                </View>
-              </View>
-            </Left>
-
-            <View>
-              <View style={{ alignItems: 'flex-end' }}>
-                <Text testID="assignedTo">{assignedTo}</Text>
-                <Text testID="milestone">{milestone}</Text>
-              </View>
-            </View>
-          </CardItem>
-        </Card>
+        <Form>
+          <Item floatingLabel>
+            <Label>Title</Label>
+            <Input />
+          </Item>
+          <Textarea rowSpan={5} placeholder="Description" />
+          <Item>
+            <CheckBox checked={true} />
+            <Body>
+              <Text>Daily Stand Up</Text>
+            </Body>
+          </Item>
+          <Item floatingLabel>
+            <Label>Assigned To</Label>
+            <Input />
+          </Item>
+          <Item picker>
+            <Picker
+              mode="dropdown"
+              iosIcon={<Icon name="arrow-down" />}
+              style={{ width: undefined }}
+              placeholder="Status"
+              placeholderStyle={{ color: '#bfc6ea' }}
+              placeholderIconColor="#007aff"
+            >
+              <Picker.Item label="Open" value="key0" />
+              <Picker.Item label="Closed" value="key1" />
+              <Picker.Item label="In Progress" value="key2" />
+            </Picker>
+          </Item>
+          <Item floatingLabel>
+            <Label>Milestone</Label>
+            <Input />
+          </Item>
+          <Item floatingLabel>
+            <Label>Labels</Label>
+            <Input />
+          </Item>
+          <Item floatingLabel>
+            <Label>Due By</Label>
+            <Input />
+          </Item>
+        </Form>
+        <Button light>
+          <Text> Add </Text>
+        </Button>
       </Content>
     </Container>
   );
