@@ -11,7 +11,6 @@ import {
   Body,
   Text,
   Picker,
-  Icon,
   Button,
 } from 'native-base';
 
@@ -36,14 +35,7 @@ export default () => {
             <Input />
           </Item>
           <Item picker>
-            <Picker
-              mode="dropdown"
-              iosIcon={<Icon name="arrow-down" />}
-              style={{ width: undefined }}
-              placeholder="Status"
-              placeholderStyle={{ color: '#bfc6ea' }}
-              placeholderIconColor="#007aff"
-            >
+            <Picker mode="dropdown" placeholder="Status">
               <Picker.Item label="Open" value="key0" />
               <Picker.Item label="Closed" value="key1" />
               <Picker.Item label="In Progress" value="key2" />
