@@ -1,11 +1,12 @@
 import React from 'react';
 import { Button, Modal, Text, TouchableHighlight, View } from 'react-native';
+import Issue from 'src/project/issues/Issue';
 
-export interface IAddButtonProps {
+export interface AddButtonProps {
   type: string;
 }
 
-export default class AddButton extends React.Component<IAddButtonProps> {
+export default class AddButton extends React.Component<AddButtonProps> {
   state = {
     modalVisible: false,
   };
@@ -20,9 +21,10 @@ export default class AddButton extends React.Component<IAddButtonProps> {
           animationType="slide"
           transparent={false}
           visible={this.state.modalVisible}
+          onRequestClose={() => {}}
         >
-          <View>
-            <Text>Add stuff here</Text>
+          <View style={{ flex: 1 }}>
+            <Issue />
             <TouchableHighlight
               testID="close"
               onPress={() => this.setModalVisible(!this.state.modalVisible)}

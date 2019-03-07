@@ -1,12 +1,12 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 
-export interface IIssuesCounterProps {
+export interface IssuesCounterProps {
   openIssues: number;
   closedIssues: number;
 }
 
-export default class IssuesCounter extends React.Component<IIssuesCounterProps> {
+export default class IssuesCounter extends React.Component<IssuesCounterProps> {
   counterText = () => {
     const { openIssues, closedIssues } = this.props;
 

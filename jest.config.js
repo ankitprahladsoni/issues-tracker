@@ -16,7 +16,7 @@ module.exports = {
       },
     },
   },
-  setupTestFrameworkScriptFile: '<rootDir>__tests__/SetupTests.js',
+  setupFilesAfterEnv: ['<rootDir>__tests__/SetupTests.js'],
   cacheDirectory: '.jest/cache',
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
     prefix: '<rootDir>/',

@@ -15,5 +15,6 @@
     "prettier.singleQuote": true,
     "prettier.trailingComma": "es5",
     "typescript.suggest.completeFunctionCalls": true,
-    "editor.snippetSuggestions": "top"
+    "editor.snippetSuggestions": "top",
+    "jest.pathToJest": "yarn test"
 }

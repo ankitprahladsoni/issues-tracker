@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { View } from 'react-native';
 
-export interface IProgressIndicatorProps {
+export interface ProgressIndicatorProps {
   percentage: number;
 }
 
 export default class ProgressIndicator extends React.Component<
-  IProgressIndicatorProps
+  ProgressIndicatorProps
 > {
   getColor = (percentage: number) => {
     const percColors = [

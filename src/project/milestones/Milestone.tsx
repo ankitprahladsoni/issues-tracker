@@ -4,7 +4,7 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import Status from '../Status';
 
-export interface IMilestoneProps {
+export interface MilestoneProps {
   title: string;
   description: string;
   status: Status;
@@ -15,7 +15,7 @@ export interface IMilestoneProps {
   closedAt?: Date;
 }
 
-export default class Milestone extends React.Component<IMilestoneProps> {
+export default class Milestone extends React.Component<MilestoneProps> {
   issuesCompletionPercent = () => {
     const { openIssues, closedIssues } = this.props;
     return closedIssues === 0
