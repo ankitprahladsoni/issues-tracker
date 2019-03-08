@@ -21,7 +21,7 @@ export default () => {
         <Form>
           <Item floatingLabel>
             <Label>Title</Label>
-            <Input testID="title-input"/>
+            <Input testID="title-input" />
           </Item>
           <Textarea rowSpan={5} placeholder="Description" />
           <Item>
@@ -47,10 +47,6 @@ export default () => {
           </Item>
           <Item floatingLabel>
             <Label>Labels</Label>
-            <Input />
-          </Item>
-          <Item floatingLabel>
-            <Label>Due By</Label>
             <Input />
           </Item>
         </Form>
