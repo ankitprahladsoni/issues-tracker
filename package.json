@@ -36,7 +36,7 @@
     "enzyme-adapter-react-16": "^1.7.1",
     "jest": "^24.3.0",
     "jest-each": "^24.3.0",
-    "jest-expo": "^32.0.0",
+    "jest-expo": "^33.0.1",
     "react-addons-test-utils": "^15.6.2",
     "react-dom": "^16.7.0",
     "react-native-typescript-transformer": "^1.2.11",
