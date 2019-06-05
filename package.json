@@ -33,7 +33,7 @@
     "@types/react-navigation": "^3.0.7",
     "babel-preset-expo": "^5.0.0",
     "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.7.1",
+    "enzyme-adapter-react-16": "^1.14.0",
     "jest": "^24.3.0",
     "jest-each": "^24.3.0",
     "jest-expo": "^32.0.0",
