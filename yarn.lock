@@ -902,15 +902,16 @@
     "@types/cheerio" "*"
     "@types/react" "*"
 
-"@types/expo@^32.0.5":
-  version "32.0.5"
-  resolved "https://registry.yarnpkg.com/@types/expo/-/expo-32.0.5.tgz#b28b0007478b1a61f44ad5f0e791b9652b44ffa6"
-  integrity sha512-ToWAKQtQB41BBLPQhg3ReHzkr1BuaBK8j+qdGnA+vcBcwEpaxzQcmlbi6S8yn2kDXmmYS/gH556h5hLl7E0Agg==
+"@types/expo@^32.0.13":
+  version "32.0.13"
+  resolved "https://registry.yarnpkg.com/@types/expo/-/expo-32.0.13.tgz#c43c9c0ada5e62a466ea427cc922c495345f55a7"
+  integrity sha512-kKU0zpkiyGGB4+A26vT9QmWbQ8/ccu9ui8ek7gDsz8FAk8atAvHQq9WaZpARSNqH6jTn+Ww2tKUo3Mw/cutoQQ==
   dependencies:
     "@types/fbemitter" "*"
     "@types/react" "*"
     "@types/react-native" "*"
     react-native-maps "*"
+    react-native-svg "*"
 
 "@types/expo__vector-icons@^9.0.1":
   version "9.0.1"
@@ -7128,6 +7129,11 @@ react-native-screens@1.0.0-alpha.22, "react-native-screens@^1.0.0 || ^1.0.0-alph
   version "1.0.0-alpha.22"
   resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-1.0.0-alpha.22.tgz#7a120377b52aa9bbb94d0b8541a014026be9289b"
   integrity sha512-kSyAt0AeVU6N7ZonfV6dP6iZF8B7Bce+tk3eujXhzBGsLg0VSLnU7uE9VqJF0xdQrHR91ZjGgVMieo/8df9KTA==
+
+react-native-svg@*:
+  version "9.4.0"
+  resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-9.4.0.tgz#e428e0eae55aebd2355f1ff4f22675dad4611960"
+  integrity sha512-IVJlVbS2dAPerPr927fEi4uXzrPXzlra5ddgyJXZZ2IKA2ZygyYWFZDM+vsQs+Vj20CfL8nOWszQQV57vdQgFg==
 
 react-native-svg@8.0.10:
   version "8.0.10"
