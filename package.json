@@ -34,7 +34,7 @@
     "babel-preset-expo": "^5.0.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.7.1",
-    "jest": "^24.3.0",
+    "jest": "^24.8.0",
     "jest-each": "^24.3.0",
     "jest-expo": "^32.0.0",
     "react-addons-test-utils": "^15.6.2",
