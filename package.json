@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@expo/samples": "^2.1.1",
-    "@expo/vector-icons": "^10.0.1",
+    "@expo/vector-icons": "^10.0.2",
     "@types/enzyme": "^3.1.15",
     "@types/enzyme-adapter-react-16": "^1.0.3",
     "@types/expo": "^32.0.5",
