@@ -20,7 +20,7 @@ describe('For Open/Closed button', () => {
       propsForElementInsideWrapper(openClose, buttonId).onPress();
       const screenProps = wrapper.find(TabNavigator).props().screenProps;
 
-      expect(screenProps.status).toBe(status);
+      expect(screenProps!.status).toBe(status);
     });
   });
 });

@@ -8,3 +8,4 @@ npm-debug.*
 .jest/
 coverage/
 report.json
+/yarn-error.log
