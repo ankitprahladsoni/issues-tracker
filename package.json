@@ -17,7 +17,7 @@
     "react": "16.8.3",
     "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
     "react-navigation": "^3.11.1",
-    "native-base": "^2.12.1"
+    "native-base": "^2.13.7"
   },
   "devDependencies": {
     "@expo/samples": "^3.0.1",
