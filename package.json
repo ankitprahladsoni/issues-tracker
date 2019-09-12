@@ -40,7 +40,7 @@
     "react-addons-test-utils": "^15.6.2",
     "react-dom": "^16.7.0",
     "react-native-typescript-transformer": "^1.2.11",
-    "ts-jest": "^24.0.0",
+    "ts-jest": "^24.1.0",
     "tslint": "^5.18.0",
     "tslint-config-airbnb": "^5.11.1",
     "typescript": "^3.5.3"
