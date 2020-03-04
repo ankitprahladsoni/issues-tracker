@@ -1244,12 +1244,11 @@
     "@types/react" "*"
     "@types/react-native" "*"
 
-"@types/react-native@*", "@types/react-native@^0.60.1":
-  version "0.60.1"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.60.1.tgz#b512fe7156df18ddb3860b4551cfa5de667e68b5"
-  integrity sha512-COOHdIDGEjpqacOm4bJmq4kmchPU6WiP0JeTzuESvqu4CzfeyMZ96eG+WYO8n3ebQjpN38Hqw+VwMPxe/BrhKg==
+"@types/react-native@*", "@types/react-native@^0.61.19":
+  version "0.61.19"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.61.19.tgz#5cbb692640b3b3dbdd82b37204b059141eda7236"
+  integrity sha512-A6M+t/8gDFe5rF7DoFDCLEfadturcgV4NCrXc64W/luLxNpR3WGMEKsK1EeR0/OmOfMyS4rQTH5nAhl4iaQ+KA==
   dependencies:
-    "@types/prop-types" "*"
     "@types/react" "*"
 
 "@types/react-navigation@^3.0.7":
